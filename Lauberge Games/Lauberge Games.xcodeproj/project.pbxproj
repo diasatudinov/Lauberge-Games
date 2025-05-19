@@ -10,22 +10,9 @@
 		2B328ACC2DD3648100BFF344 /* Lauberge Games.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Lauberge Games.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		2B328ADE2DD364A500BFF344 /* Exceptions for "Lauberge Games" folder in "Lauberge Games" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				"Lauberge-Games-Info.plist",
-			);
-			target = 2B328ACB2DD3648100BFF344 /* Lauberge Games */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		2B328ACE2DD3648100BFF344 /* Lauberge Games */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				2B328ADE2DD364A500BFF344 /* Exceptions for "Lauberge Games" folder in "Lauberge Games" target */,
-			);
 			path = "Lauberge Games";
 			sourceTree = "<group>";
 		};

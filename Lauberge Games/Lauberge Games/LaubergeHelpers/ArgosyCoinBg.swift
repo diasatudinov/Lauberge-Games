@@ -1,10 +1,18 @@
+//
+//  ArgosyCoinBg.swift
+//  Lauberge Games
+//
+//  Created by Dias Atudinov on 19.05.2025.
+//
+
+
 import SwiftUI
 
 struct ArgosyCoinBg: View {
     @StateObject var user = ArgosyUser.shared
     var body: some View {
         ZStack {
-            Image(.coinsBgArgosy)
+            Image(.coinsBgLauberge)
                 .resizable()
                 .scaledToFit()
             
@@ -12,7 +20,7 @@ struct ArgosyCoinBg: View {
                 .font(.system(size: ArgosyDeviceManager.shared.deviceType == .pad ? 48:24, weight: .black))
                 .foregroundStyle(.white)
                 .textCase(.uppercase)
-                .offset(x: 20)
+                .offset(x: 12, y: -3)
             
             
             
