@@ -1,3 +1,11 @@
+//
+//  ArgosyAchievementsView.swift
+//  Lauberge Games
+//
+//  Created by Dias Atudinov on 19.05.2025.
+//
+
+
 import SwiftUI
 
 struct ArgosyAchievementsView: View {
@@ -13,19 +21,19 @@ struct ArgosyAchievementsView: View {
                             presentationMode.wrappedValue.dismiss()
                             
                         } label: {
-                            Image(.backIconArgosy)
+                            Image(.backIconLauberge)
                                 .resizable()
                                 .scaledToFit()
-                                .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 100:50)
+                                .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 140:70)
                         }
                         Spacer()
                     }.padding([.horizontal, .top])
                 }
                 
-                Image(.achievementsTextArgosy)
+                Image(.achievementTextLauberge)
                     .resizable()
                     .scaledToFit()
-                    .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 210:105)
+                    .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 136:68)
                 
                 ScrollView {
                     
@@ -112,7 +120,7 @@ struct ArgosyAchievementsView: View {
             
         }.background(
             ZStack {
-                Image(.appBgArgosy)
+                Image(.appBgLauberge)
                     .resizable()
                     .edgesIgnoringSafeArea(.all)
                     .scaledToFill()

@@ -1,13 +1,21 @@
+//
+//  ArgosyAchievementsViewModel.swift
+//  Lauberge Games
+//
+//  Created by Dias Atudinov on 19.05.2025.
+//
+
+
 import SwiftUI
 
 class ArgosyAchievementsViewModel: ObservableObject {
     
     @Published var achievements: [AchievementSG] = [
-        AchievementSG(image: "achi1IconArgosy", achievedCount: 0, achievedMaxCount: 1, isAchieved: false),
-        AchievementSG(image: "achi2IconArgosy", achievedCount: 0, achievedMaxCount: 1, isAchieved: false),
-        AchievementSG(image: "achi3IconArgosy", achievedCount: 0, achievedMaxCount: 1, isAchieved: false),
-        AchievementSG(image: "achi4IconArgosy", achievedCount: 0, achievedMaxCount: 1, isAchieved: false),
-        AchievementSG(image: "achi5IconArgosy", achievedCount: 0, achievedMaxCount: 1, isAchieved: false)
+        AchievementSG(image: "achi1IconLauberge", achievedCount: 0, achievedMaxCount: 1, isAchieved: false),
+        AchievementSG(image: "achi2IconLauberge", achievedCount: 0, achievedMaxCount: 1, isAchieved: false),
+        AchievementSG(image: "achi3IconLauberge", achievedCount: 0, achievedMaxCount: 1, isAchieved: false),
+        AchievementSG(image: "achi4IconLauberge", achievedCount: 0, achievedMaxCount: 1, isAchieved: false),
+        AchievementSG(image: "achi5IconLauberge", achievedCount: 0, achievedMaxCount: 1, isAchieved: false)
 
     ] {
         didSet {
