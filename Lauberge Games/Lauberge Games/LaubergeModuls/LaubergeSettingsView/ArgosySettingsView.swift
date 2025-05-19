@@ -10,11 +10,10 @@ struct ArgosySettingsView: View {
             VStack {
                 
                 
+                Spacer()
                 
                 ZStack {
-                    Image(.settingsBgArgosy)
-                        .resizable()
-                        .scaledToFit()
+                    
                     HStack(spacing: 10) {
                         
                         Button {
@@ -23,7 +22,7 @@ struct ArgosySettingsView: View {
                             }
                         } label: {
                             
-                            Image(settingsVM.soundEnabled ? .soundOnArgosy:.soundOffArgosy)
+                            Image(settingsVM.soundEnabled ? .soundOnLauberge:.soundOffLauberge)
                                 .resizable()
                                 .scaledToFit()
                                 .frame(width: ArgosyDeviceManager.shared.deviceType == .pad ? 200:100, height: ArgosyDeviceManager.shared.deviceType == .pad ? 140:70)
@@ -36,7 +35,7 @@ struct ArgosySettingsView: View {
                             }
                         } label: {
                             
-                            Image(settingsVM.musicEnabled ? .musicOnArgosy:.musicOffArgosy)
+                            Image(settingsVM.musicEnabled ? .musicOnLauberge:.musicOffLauberge)
                                 .resizable()
                                 .scaledToFit()
                                 .frame(width: ArgosyDeviceManager.shared.deviceType == .pad ? 200:100,height: ArgosyDeviceManager.shared.deviceType == .pad ? 140:70)
@@ -47,7 +46,16 @@ struct ArgosySettingsView: View {
                     
                     
                 }.frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 342:171)
+                Spacer()
+                Image(.languageTextLauberge)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 180:90)
+                    .offset(y: -150)
+                
             }
+            
+            
             VStack {
                 HStack {
                     HStack(alignment: .top) {
@@ -55,7 +63,7 @@ struct ArgosySettingsView: View {
                             presentationMode.wrappedValue.dismiss()
                             
                         } label: {
-                            Image(.backIconArgosy)
+                            Image(.backIconLauberge)
                                 .resizable()
                                 .scaledToFit()
                                 .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 100:50)
@@ -66,15 +74,15 @@ struct ArgosySettingsView: View {
                     }.padding([.horizontal, .top])
                 }.padding(.bottom, 40)
                 
-                Image(.settingsTextArgosy)
+                Image(.settingsTextLauberge)
                     .resizable()
                     .scaledToFit()
-                    .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 210:105)
+                    .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 136:68)
                 Spacer()
             }
         }.background(
             ZStack {
-                Image(.appBgArgosy)
+                Image(.appBgLauberge)
                     .resizable()
                     .edgesIgnoringSafeArea(.all)
                     .scaledToFill()

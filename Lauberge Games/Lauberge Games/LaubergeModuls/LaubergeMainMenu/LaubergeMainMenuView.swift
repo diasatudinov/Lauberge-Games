@@ -1,10 +1,3 @@
-//
-//  LaubergeMainMenuView.swift
-//  Lauberge Games
-//
-//  Created by Dias Atudinov on 19.05.2025.
-//
-
 import SwiftUI
 
 struct LaubergeMainMenuView: View {
@@ -14,9 +7,9 @@ struct LaubergeMainMenuView: View {
     @State private var showMiniGames = false
     @State private var showSettings = false
     
-//    @StateObject var achievementVM = ArgosyAchievementsViewModel()
-//    @StateObject var settingsVM = ArgosySettingsViewModel()
-//    @StateObject var shopVM = ArgosyShopViewModel()
+    @StateObject var achievementVM = ArgosyAchievementsViewModel()
+    @StateObject var settingsVM = ArgosySettingsViewModel()
+    @StateObject var shopVM = ArgosyShopViewModel()
     
     var body: some View {
         
@@ -95,19 +88,19 @@ struct LaubergeMainMenuView: View {
             }
         )
         .fullScreenCover(isPresented: $showGame) {
-//            ArgosyChooseLevelView(shopVM: shopVM)
+            ArgosyChooseLevelView(shopVM: shopVM)
         }
         .fullScreenCover(isPresented: $showMiniGames) {
 //            ArgosyChooseMiniGame()
         }
         .fullScreenCover(isPresented: $showAchievement) {
-//            ArgosyAchievementsView(viewModel: achievementVM)
+            ArgosyAchievementsView(viewModel: achievementVM)
         }
         .fullScreenCover(isPresented: $showShop) {
-//            ArgosyShopView(viewModel: shopVM)
+            ArgosyShopView(viewModel: shopVM)
         }
         .fullScreenCover(isPresented: $showSettings) {
-//            ArgosySettingsView(settingsVM: settingsVM)
+            ArgosySettingsView(settingsVM: settingsVM)
         }
         
     }
