@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "iconSkin4Lauberge.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

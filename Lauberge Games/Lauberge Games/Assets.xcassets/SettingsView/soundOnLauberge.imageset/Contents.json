@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "soundOnLauberge.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
