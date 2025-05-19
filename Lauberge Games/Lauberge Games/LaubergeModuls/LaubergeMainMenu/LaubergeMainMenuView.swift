@@ -38,49 +38,49 @@ struct LaubergeMainMenuView: View {
                 Button {
                     showGame = true
                 } label: {
-                    Image(.playIconArgosy)
+                    Image(.playIconLauberge)
                         .resizable()
                         .scaledToFit()
-                        .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 210:105)
+                        .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 188:94)
                 }
                 
                 Button {
                     showShop = true
                 } label: {
-                    Image(.shopIconArgosy)
+                    Image(.shopIconLauberge)
                         .resizable()
                         .scaledToFit()
-                        .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 210:105)
+                        .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 188:94)
                 }
                 
                 Button {
                     showAchievement = true
                 } label: {
-                    Image(.achievementsIconArgosy)
+                    Image(.achievementIconLauberge)
                         .resizable()
                         .scaledToFit()
-                        .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 210:105)
+                        .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 188:94)
                 }
-                
-                Button {
-                    showSettings = true
-                } label: {
-                    Image(.settingsIconArgosy)
-                        .resizable()
-                        .scaledToFit()
-                        .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 210:105)
+                HStack {
+                    Button {
+                        showSettings = true
+                    } label: {
+                        Image(.settingsIconLauberge)
+                            .resizable()
+                            .scaledToFit()
+                            .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 134:67)
+                    }
+                    
+                    
+                    Button {
+                        showMiniGames = true
+                    } label: {
+                        Image(.miniGameIconLauberge)
+                            .resizable()
+                            .scaledToFit()
+                            .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 134:67)
+                    }
                 }
-                
-                
-                Button {
-                    showMiniGames = true
-                } label: {
-                    Image(.miniGamesIconArgosy)
-                        .resizable()
-                        .scaledToFit()
-                        .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 160:80)
-                }
-                
                 Spacer()
                 
             }.padding()
@@ -88,7 +88,7 @@ struct LaubergeMainMenuView: View {
         }
         .background(
             ZStack {
-                Image(.appBgArgosy)
+                Image(.appBgLauberge)
                     .resizable()
                     .edgesIgnoringSafeArea(.all)
                     .scaledToFill()
