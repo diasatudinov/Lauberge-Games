@@ -19,7 +19,7 @@ struct ArgosyShopView: View {
                                 presentationMode.wrappedValue.dismiss()
                                 
                             } label: {
-                                Image(.backIconArgosy)
+                                Image(.backIconLauberge)
                                     .resizable()
                                     .scaledToFit()
                                     .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 100:50)
@@ -33,14 +33,10 @@ struct ArgosyShopView: View {
                     }
                 }
                 
-                Image(.shopTextArgosy)
-                    .resizable()
-                    .scaledToFit()
-                    .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 150:75)
                 
                 Spacer()
                 ZStack {
-                    Image(.skinBgArgosy)
+                    Image(.skinBgLauberge)
                         .resizable()
                         .scaledToFit()
                     
@@ -50,7 +46,7 @@ struct ArgosyShopView: View {
                                 skinIndex -= 1
                             }
                         } label: {
-                            Image(.arrowShopArgosy)
+                            Image(.arrowShopLauberge)
                                 .resizable()
                                 .scaledToFit()
                                 .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 100:50)
@@ -67,7 +63,7 @@ struct ArgosyShopView: View {
                                 skinIndex += 1
                             }
                         } label: {
-                            Image(.arrowShopArgosy)
+                            Image(.arrowShopLauberge)
                                 .resizable()
                                 .scaledToFit()
                                 .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 100:50)
@@ -77,7 +73,7 @@ struct ArgosyShopView: View {
                 }.frame(width: ArgosyDeviceManager.shared.deviceType == .pad ? 500:250, height: ArgosyDeviceManager.shared.deviceType == .pad ? 450:250)
                 
                 ZStack {
-                    Image(.backBgArgosy)
+                    Image(.backBgLauberge)
                         .resizable()
                         .scaledToFit()
                     
@@ -87,7 +83,7 @@ struct ArgosyShopView: View {
                                 backIndex -= 1
                             }
                         } label: {
-                            Image(.arrowShopArgosy)
+                            Image(.arrowShopLauberge)
                                 .resizable()
                                 .scaledToFit()
                                 .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 100:50)
@@ -105,7 +101,7 @@ struct ArgosyShopView: View {
                                 backIndex += 1
                             }
                         } label: {
-                            Image(.arrowShopArgosy)
+                            Image(.arrowShopLauberge)
                                 .resizable()
                                 .scaledToFit()
                                 .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 100:50)
@@ -118,7 +114,7 @@ struct ArgosyShopView: View {
             }
         }.background(
             ZStack {
-                Image(.appBgArgosy)
+                Image(.appBgLauberge)
                     .resizable()
                     .edgesIgnoringSafeArea(.all)
                     .scaledToFill()
@@ -142,7 +138,7 @@ struct ArgosyShopView: View {
                         ZStack {
                             
                             if let currentItem = viewModel.currentPersonItem, currentItem.name == item.name {
-                                Image(.arrowShopArgosy)
+                                Image(.arrowShopLauberge)
                                     .resizable()
                                     .scaledToFit()
                                     .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 100:50)
@@ -154,7 +150,7 @@ struct ArgosyShopView: View {
                 } else {
                     VStack {
                         ZStack {
-                            Image(.priceArgosy)
+                            Image(.priceLauberge)
                                 .resizable()
                                 .scaledToFit()
                                 .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 100:50)
@@ -170,7 +166,7 @@ struct ArgosyShopView: View {
                         ZStack {
                             
                             if let currentItem = viewModel.currentBgItem, currentItem.name == item.name {
-                                Image(.arrowShopArgosy)
+                                Image(.arrowShopLauberge)
                                     .resizable()
                                     .scaledToFit()
                                     .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 100:50)
@@ -182,7 +178,7 @@ struct ArgosyShopView: View {
                 } else {
                     VStack {
                         ZStack {
-                            Image(.priceArgosy)
+                            Image(.priceLauberge)
                                 .resizable()
                                 .scaledToFit()
                                 .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 100:50)

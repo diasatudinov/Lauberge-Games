@@ -8,22 +8,22 @@ enum ArgosyStoreSection: Codable, Hashable {
 class ArgosyShopViewModel: ObservableObject {
     @Published var shopTeamItems: [Item] = [
         
-        Item(name: "bg1", image: "gameBg1Argosy", icon: "backIcon1Argosy", section: .backgrounds, price: 100),
-        Item(name: "bg2", image: "gameBg2Argosy", icon: "backIcon2Argosy", section: .backgrounds, price: 100),
-        Item(name: "bg3", image: "gameBg3Argosy", icon: "backIcon3Argosy", section: .backgrounds, price: 100),
-        Item(name: "bg4", image: "gameBg4Argosy", icon: "backIcon4Argosy", section: .backgrounds, price: 100),
+        Item(name: "bg1", image: "gameBg1Lauberge", icon: "backIcon1Lauberge", section: .backgrounds, price: 100),
+        Item(name: "bg2", image: "gameBg2Lauberge", icon: "backIcon2Lauberge", section: .backgrounds, price: 100),
+        Item(name: "bg3", image: "gameBg3Lauberge", icon: "backIcon3Lauberge", section: .backgrounds, price: 100),
+        Item(name: "bg4", image: "gameBg4Lauberge", icon: "backIcon4Lauberge", section: .backgrounds, price: 100),
         
         
-        Item(name: "skin1", image: "imageSkin1Argosy", icon: "iconSkin1Argosy", section: .skin, price: 100),
-        Item(name: "skin2", image: "imageSkin2Argosy", icon: "iconSkin2Argosy", section: .skin, price: 100),
-        Item(name: "skin3", image: "imageSkin3Argosy", icon: "iconSkin3Argosy", section: .skin, price: 100),
-        Item(name: "skin4", image: "imageSkin4Argosy", icon: "iconSkin4Argosy", section: .skin, price: 100),
+        Item(name: "skin1", image: "imageSkin1Lauberge", icon: "iconSkin1Lauberge", section: .skin, price: 100),
+        Item(name: "skin2", image: "imageSkin2Lauberge", icon: "iconSkin2Lauberge", section: .skin, price: 100),
+        Item(name: "skin3", image: "imageSkin3Lauberge", icon: "iconSkin3Lauberge", section: .skin, price: 100),
+        Item(name: "skin4", image: "imageSkin4Lauberge", icon: "iconSkin4Lauberge", section: .skin, price: 100),
          
     ]
     
     @Published var boughtItems: [Item] = [
-        Item(name: "bg1", image: "gameBg1Argosy", icon: "backIcon1Argosy", section: .backgrounds, price: 100),
-        Item(name: "skin1", image: "imageSkin1Argosy", icon: "iconSkin1Argosy", section: .skin, price: 100),
+        Item(name: "bg1", image: "gameBg1Lauberge", icon: "backIcon1Lauberge", section: .backgrounds, price: 100),
+        Item(name: "skin1", image: "imageSkin1Lauberge", icon: "iconSkin1Lauberge", section: .skin, price: 100),
     ] {
         didSet {
             saveBoughtItem()
@@ -48,9 +48,9 @@ class ArgosyShopViewModel: ObservableObject {
         loadBoughtItem()
     }
     
-    private let userDefaultsBgKey = "bgKeyArgosy"
-    private let userDefaultsPersonKey = "skinsKeyArgosy"
-    private let userDefaultsBoughtKey = "boughtItemsArgosy"
+    private let userDefaultsBgKey = "bgKeyLauberge"
+    private let userDefaultsPersonKey = "skinsKeyLauberge"
+    private let userDefaultsBoughtKey = "boughtItemsLauberge"
 
     
     func saveCurrentBg() {
