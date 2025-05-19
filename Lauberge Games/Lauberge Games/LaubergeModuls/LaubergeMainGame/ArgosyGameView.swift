@@ -14,6 +14,9 @@ struct ArgosyGameView: View {
     @State private var isWin = false
     @State private var score = 0
     @State var level: Int
+    
+    var imagesForView: [String] = ["viewImage1","viewImage2","viewImage3","viewImage4"]
+    
     var body: some View {
         ZStack {
             ArgosySpriteViewContainer(scene: gameScene, isWin: $isWin, score: $score, level: level)
@@ -22,16 +25,26 @@ struct ArgosyGameView: View {
             VStack(spacing: ArgosyDeviceManager.shared.deviceType == .pad ? 200:100) {
                 HStack(spacing: ArgosyDeviceManager.shared.deviceType == .pad ? 200:100) {
                     ZStack {
-                        Image(.rectangleMainGameArgosy)
+                        Image(.rectangleMainGameLauberge1)
                             .resizable()
                             .scaledToFit()
+                        
+                        Image(imagesForView[Int.random(in: Range(0...imagesForView.count - 1))])
+                            .resizable()
+                            .scaledToFit()
+                            .padding()
                     }
                     .frame(width: ArgosyDeviceManager.shared.deviceType == .pad ? 280:140,height: ArgosyDeviceManager.shared.deviceType == .pad ? 400:200)
                     
                     ZStack {
-                        Image(.rectangleMainGameArgosy)
+                        Image(.rectangleMainGameLauberge2)
                             .resizable()
                             .scaledToFit()
+                        
+                        Image(imagesForView[Int.random(in: Range(0...imagesForView.count - 1))])
+                            .resizable()
+                            .scaledToFit()
+                            .padding()
                             
                         
                     }
@@ -40,19 +53,28 @@ struct ArgosyGameView: View {
                 
                 HStack(spacing: ArgosyDeviceManager.shared.deviceType == .pad ? 200:100) {
                     ZStack {
-                        Image(.rectangleMainGameArgosy)
+                        Image(.rectangleMainGameLauberge3)
                             .resizable()
                             .scaledToFit()
+                        
+                        Image(imagesForView[Int.random(in: Range(0...imagesForView.count - 1))])
+                            .resizable()
+                            .scaledToFit()
+                            .padding()
                             
                         
                     }
                     .frame(width: ArgosyDeviceManager.shared.deviceType == .pad ? 280: 140,height: ArgosyDeviceManager.shared.deviceType == .pad ? 400:200)
                     
                     ZStack {
-                        Image(.rectangleMainGameArgosy)
+                        Image(.rectangleMainGameLauberge4)
                             .resizable()
                             .scaledToFit()
                             
+                        Image(imagesForView[Int.random(in: Range(0...imagesForView.count - 1))])
+                            .resizable()
+                            .scaledToFit()
+                            .padding()
                         
                     }
                     .frame(width: ArgosyDeviceManager.shared.deviceType == .pad ? 280:140,height: ArgosyDeviceManager.shared.deviceType == .pad ? 400:200)
@@ -66,25 +88,13 @@ struct ArgosyGameView: View {
                             presentationMode.wrappedValue.dismiss()
                             
                         } label: {
-                            Image(.backIconArgosy)
+                            Image(.backIconLauberge)
                                 .resizable()
                                 .scaledToFit()
                                 .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 100:50)
                         }
                         Spacer()
-                        Button {
-                            gameScene.restartLevel()
-                            isWin = false
-                        } label: {
-                            Image(.restartGameBtnArgosy)
-                                .resizable()
-                                .scaledToFit()
-                                .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 100:50)
-                        }
                         
-                        
-                       
-                       
                     }.padding([.horizontal, .top])
                 }
                 
@@ -97,15 +107,24 @@ struct ArgosyGameView: View {
                     Color.black.opacity(0.5).ignoresSafeArea()
                     VStack {
                         
-                        Image(.winBgArgosy)
+                        Image(.winBgLauberge)
                             .resizable()
                             .scaledToFit()
                             .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 400:223)
                         Button {
+                            presentationMode.wrappedValue.dismiss()
+                        } label: {
+                            Image(.nextLvlBtnLauberge)
+                                .resizable()
+                                .scaledToFit()
+                                .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 200:105)
+                        }
+                        
+                        Button {
                             gameScene.restartLevel()
                             isWin = false
                         } label: {
-                            Image(.nextLvlBtnArgosy)
+                            Image(.restartBtnLauberge)
                                 .resizable()
                                 .scaledToFit()
                                 .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 200:105)
@@ -114,7 +133,7 @@ struct ArgosyGameView: View {
                         Button {
                             presentationMode.wrappedValue.dismiss()
                         } label: {
-                            Image(.backBtnGreenArgosy)
+                            Image(.backBtnLauberge)
                                 .resizable()
                                 .scaledToFit()
                                 .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 200:105)
@@ -126,12 +145,11 @@ struct ArgosyGameView: View {
             
         }.background(
             ZStack {
-                if let item = shopVM.currentBgItem {
-                    Image(item.image)
+                Image(.gameMainBgLauberge)
                         .resizable()
                         .edgesIgnoringSafeArea(.all)
                         .scaledToFill()
-                }
+                
             }
         )
     }

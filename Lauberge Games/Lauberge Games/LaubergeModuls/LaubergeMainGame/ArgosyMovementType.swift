@@ -47,7 +47,7 @@ class ArgosyGameScene: SKScene, SKPhysicsContactDelegate {
             ]
             shipConfigs = [
                 ArgosyShipConfig(name: "ship0", initialPosition: CGPoint(x: w/2, y: fieldCenterY + fieldHeight/2 - 50), direction: CGVector(dx: 0, dy: -1), movement: .straight),
-                ArgosyShipConfig(name: "ship1", initialPosition: CGPoint(x: w/2 - fieldHeight/2 + 50, y: fieldCenterY), direction: CGVector(dx: 1, dy: 0), movement: .turnLeft),
+                ArgosyShipConfig(name: "ship1", initialPosition: CGPoint(x: w/2 - fieldHeight/2 + 100, y: fieldCenterY), direction: CGVector(dx: 1, dy: 0), movement: .turnLeft),
                 ArgosyShipConfig(name: "ship2", initialPosition: CGPoint(x: w/2, y: fieldCenterY - fieldHeight/2 + 50), direction: CGVector(dx: 0, dy: 1), movement: .turnRight),
                 ArgosyShipConfig(name: "ship3", initialPosition: CGPoint(x: w/2 + fieldHeight/2 - 80, y: fieldCenterY), direction: CGVector(dx: 1, dy: 0), movement: .straight)
             ]
@@ -58,7 +58,7 @@ class ArgosyGameScene: SKScene, SKPhysicsContactDelegate {
             ]
             shipConfigs = [
                 ArgosyShipConfig(name: "ship0", initialPosition: CGPoint(x: w/2, y: fieldCenterY + fieldHeight/2 - 50), direction: CGVector(dx: 0, dy: 1), movement: .straight),
-                ArgosyShipConfig(name: "ship1", initialPosition: CGPoint(x: w/2 - fieldHeight/2 + 50, y: fieldCenterY), direction: CGVector(dx: 1, dy: 0), movement: .turnLeft),
+                ArgosyShipConfig(name: "ship1", initialPosition: CGPoint(x: w/2 - fieldHeight/2 + 100, y: fieldCenterY), direction: CGVector(dx: 1, dy: 0), movement: .turnLeft),
                 ArgosyShipConfig(name: "ship2", initialPosition: CGPoint(x: w/2, y: fieldCenterY - fieldHeight/2 + 50), direction: CGVector(dx: 0, dy: 1), movement: .turnRight),
                 ArgosyShipConfig(name: "ship3", initialPosition: CGPoint(x: w/2 + fieldHeight/2 - 80, y: fieldCenterY), direction: CGVector(dx: -1, dy: 0), movement: .straight)
             ]
@@ -70,7 +70,7 @@ class ArgosyGameScene: SKScene, SKPhysicsContactDelegate {
             ]
             shipConfigs = [
                 ArgosyShipConfig(name: "ship0", initialPosition: CGPoint(x: w/2, y: fieldCenterY + fieldHeight/2 - 50), direction: CGVector(dx: 0, dy: -1), movement: .turnLeft),
-                ArgosyShipConfig(name: "ship1", initialPosition: CGPoint(x: w/2 - fieldHeight/2 + 50, y: fieldCenterY), direction: CGVector(dx: 1, dy: 0), movement: .straight),
+                ArgosyShipConfig(name: "ship1", initialPosition: CGPoint(x: w/2 - fieldHeight/2 + 100, y: fieldCenterY), direction: CGVector(dx: 1, dy: 0), movement: .straight),
                 ArgosyShipConfig(name: "ship2", initialPosition: CGPoint(x: w/2, y: fieldCenterY - fieldHeight/2 + 50), direction: CGVector(dx: 0, dy: -1), movement: .straight),
                 ArgosyShipConfig(name: "ship3", initialPosition: CGPoint(x: w/2 + fieldHeight/2 - 80, y: fieldCenterY), direction: CGVector(dx: -1, dy: 0), movement: .turnLeft)
             ]
@@ -82,7 +82,7 @@ class ArgosyGameScene: SKScene, SKPhysicsContactDelegate {
             ]
             shipConfigs = [
                 ArgosyShipConfig(name: "ship0", initialPosition: CGPoint(x: w/2, y: fieldCenterY + fieldHeight/2 - 50), direction: CGVector(dx: 0, dy: -1), movement: .straight),
-                ArgosyShipConfig(name: "ship1", initialPosition: CGPoint(x: w/2 - fieldHeight/2 + 50, y: fieldCenterY), direction: CGVector(dx: 1, dy: 0), movement: .turnRight),
+                ArgosyShipConfig(name: "ship1", initialPosition: CGPoint(x: w/2 - fieldHeight/2 + 100, y: fieldCenterY), direction: CGVector(dx: 1, dy: 0), movement: .turnRight),
                 ArgosyShipConfig(name: "ship2", initialPosition: CGPoint(x: w/2, y: fieldCenterY - fieldHeight/2 + 50), direction: CGVector(dx: 0, dy: -1), movement: .straight),
                 ArgosyShipConfig(name: "ship3", initialPosition: CGPoint(x: w/2 + fieldHeight/2 - 80, y: fieldCenterY), direction: CGVector(dx: -1, dy: 0), movement: .turnRight)
             ]
@@ -94,7 +94,7 @@ class ArgosyGameScene: SKScene, SKPhysicsContactDelegate {
             ]
             shipConfigs = [
                 ArgosyShipConfig(name: "ship0", initialPosition: CGPoint(x: w/2, y: fieldCenterY + fieldHeight/2 - 50), direction: CGVector(dx: 0, dy: -1), movement: .straight),
-                ArgosyShipConfig(name: "ship1", initialPosition: CGPoint(x: w/2 - fieldHeight/2 + 50, y: fieldCenterY), direction: CGVector(dx: 1, dy: 0), movement: .turnLeft),
+                ArgosyShipConfig(name: "ship1", initialPosition: CGPoint(x: w/2 - fieldHeight/2 + 100, y: fieldCenterY), direction: CGVector(dx: 1, dy: 0), movement: .turnLeft),
                 ArgosyShipConfig(name: "ship2", initialPosition: CGPoint(x: w/2, y: fieldCenterY - fieldHeight/2 + 50), direction: CGVector(dx: 0, dy: -1), movement: .straight),
                 ArgosyShipConfig(name: "ship3", initialPosition: CGPoint(x: w/2 + fieldHeight/2 - 80, y: fieldCenterY), direction: CGVector(dx: -1, dy: 0), movement: .turnLeft)
             ]
@@ -106,7 +106,7 @@ class ArgosyGameScene: SKScene, SKPhysicsContactDelegate {
             ]
             shipConfigs = [
                 ArgosyShipConfig(name: "ship0", initialPosition: CGPoint(x: w/2, y: fieldCenterY + fieldHeight/2 - 50), direction: CGVector(dx: 0, dy: -1), movement: .turnLeft),
-                ArgosyShipConfig(name: "ship1", initialPosition: CGPoint(x: w/2 - fieldHeight/2 + 50, y: fieldCenterY), direction: CGVector(dx: 1, dy: 0), movement: .straight),
+                ArgosyShipConfig(name: "ship1", initialPosition: CGPoint(x: w/2 - fieldHeight/2 + 100, y: fieldCenterY), direction: CGVector(dx: 1, dy: 0), movement: .straight),
                 ArgosyShipConfig(name: "ship2", initialPosition: CGPoint(x: w/2, y: fieldCenterY - fieldHeight/2 + 50), direction: CGVector(dx: 0, dy: 1), movement: .turnLeft),
                 ArgosyShipConfig(name: "ship3", initialPosition: CGPoint(x: w/2 + fieldHeight/2 - 80, y: fieldCenterY), direction: CGVector(dx: 1, dy: 0), movement: .straight)
             ]
@@ -118,7 +118,7 @@ class ArgosyGameScene: SKScene, SKPhysicsContactDelegate {
             ]
             shipConfigs = [
                 ArgosyShipConfig(name: "ship0", initialPosition: CGPoint(x: w/2, y: fieldCenterY + fieldHeight/2 - 50), direction: CGVector(dx: 0, dy: -1), movement: .straight),
-                ArgosyShipConfig(name: "ship1", initialPosition: CGPoint(x: w/2 - fieldHeight/2 + 50, y: fieldCenterY), direction: CGVector(dx: 1, dy: 0), movement: .turnRight),
+                ArgosyShipConfig(name: "ship1", initialPosition: CGPoint(x: w/2 - fieldHeight/2 + 100, y: fieldCenterY), direction: CGVector(dx: 1, dy: 0), movement: .turnRight),
                 ArgosyShipConfig(name: "ship2", initialPosition: CGPoint(x: w/2, y: fieldCenterY - fieldHeight/2 + 50), direction: CGVector(dx: 0, dy: -1), movement: .straight),
                 ArgosyShipConfig(name: "ship3", initialPosition: CGPoint(x: w/2 + fieldHeight/2 - 80, y: fieldCenterY), direction: CGVector(dx: -1, dy: 0), movement: .turnLeft)
             ]
@@ -130,7 +130,7 @@ class ArgosyGameScene: SKScene, SKPhysicsContactDelegate {
             ]
             shipConfigs = [
                 ArgosyShipConfig(name: "ship0", initialPosition: CGPoint(x: w/2, y: fieldCenterY + fieldHeight/2 - 50), direction: CGVector(dx: 0, dy: -1), movement: .straight),
-                ArgosyShipConfig(name: "ship1", initialPosition: CGPoint(x: w/2 - fieldHeight/2 + 50, y: fieldCenterY), direction: CGVector(dx: 1, dy: 0), movement: .turnRight),
+                ArgosyShipConfig(name: "ship1", initialPosition: CGPoint(x: w/2 - fieldHeight/2 + 100, y: fieldCenterY), direction: CGVector(dx: 1, dy: 0), movement: .turnRight),
                 ArgosyShipConfig(name: "ship2", initialPosition: CGPoint(x: w/2, y: fieldCenterY - fieldHeight/2 + 50), direction: CGVector(dx: 0, dy: -1), movement: .straight),
                 ArgosyShipConfig(name: "ship3", initialPosition: CGPoint(x: w/2 + fieldHeight/2 - 80, y: fieldCenterY), direction: CGVector(dx: -1, dy: 0), movement: .turnLeft)
             ]
@@ -142,7 +142,7 @@ class ArgosyGameScene: SKScene, SKPhysicsContactDelegate {
             ]
             shipConfigs = [
                 ArgosyShipConfig(name: "ship0", initialPosition: CGPoint(x: w/2, y: fieldCenterY + fieldHeight/2 - 50), direction: CGVector(dx: 0, dy: -1), movement: .straight),
-                ArgosyShipConfig(name: "ship1", initialPosition: CGPoint(x: w/2 - fieldHeight/2 + 50, y: fieldCenterY), direction: CGVector(dx: 1, dy: 0), movement: .turnRight),
+                ArgosyShipConfig(name: "ship1", initialPosition: CGPoint(x: w/2 - fieldHeight/2 + 100, y: fieldCenterY), direction: CGVector(dx: 1, dy: 0), movement: .turnRight),
                 ArgosyShipConfig(name: "ship2", initialPosition: CGPoint(x: w/2, y: fieldCenterY - fieldHeight/2 + 50), direction: CGVector(dx: 0, dy: -1), movement: .straight),
                 ArgosyShipConfig(name: "ship3", initialPosition: CGPoint(x: w/2 + fieldHeight/2 - 80, y: fieldCenterY), direction: CGVector(dx: -1, dy: 0), movement: .turnRight)
             ]
@@ -154,7 +154,7 @@ class ArgosyGameScene: SKScene, SKPhysicsContactDelegate {
             ]
             shipConfigs = [
                 ArgosyShipConfig(name: "ship0", initialPosition: CGPoint(x: w/2, y: fieldCenterY + fieldHeight/2 - 50), direction: CGVector(dx: 0, dy: 1), movement: .straight),
-                ArgosyShipConfig(name: "ship1", initialPosition: CGPoint(x: w/2 - fieldHeight/2 + 50, y: fieldCenterY), direction: CGVector(dx: 1, dy: 0), movement: .turnLeft),
+                ArgosyShipConfig(name: "ship1", initialPosition: CGPoint(x: w/2 - fieldHeight/2 + 100, y: fieldCenterY), direction: CGVector(dx: 1, dy: 0), movement: .turnLeft),
                 ArgosyShipConfig(name: "ship2", initialPosition: CGPoint(x: w/2, y: fieldCenterY - fieldHeight/2 + 50), direction: CGVector(dx: 0, dy: 1), movement: .turnRight),
                 ArgosyShipConfig(name: "ship3", initialPosition: CGPoint(x: w/2 + fieldHeight/2 - 80, y: fieldCenterY), direction: CGVector(dx: -1, dy: 0), movement: .straight)
             ]
@@ -170,7 +170,7 @@ class ArgosyGameScene: SKScene, SKPhysicsContactDelegate {
         guard let item = shopVM.currentPersonItem else { return }
         for shipConfig in shipConfigs {
             let ship = SKSpriteNode(imageNamed: item.image)
-            ship.size = CGSize(width: ArgosyDeviceManager.shared.deviceType == .pad ? 350:175, height: ArgosyDeviceManager.shared.deviceType == .pad ? 130:65)
+            ship.size = CGSize(width: ArgosyDeviceManager.shared.deviceType == .pad ? 184:92, height: ArgosyDeviceManager.shared.deviceType == .pad ? 112:56)
             ship.position = shipConfig.initialPosition
             ship.name = shipConfig.name
             ship.zRotation = atan2(shipConfig.direction.dy, shipConfig.direction.dx)
@@ -189,18 +189,18 @@ class ArgosyGameScene: SKScene, SKPhysicsContactDelegate {
             let arrowTextureName: String
             switch shipConfig.movement {
             case .straight:
-                arrowTextureName = "arrowArgosy"
+                arrowTextureName = "arrowLauberge"
             case .turnLeft:
-                arrowTextureName = "arrowLeftArgosy"
+                arrowTextureName = "arrowLeftLauberge"
             case .turnRight:
-                arrowTextureName = "arrowRightArgosy"
+                arrowTextureName = "arrowRightLauberge"
             case .uTurn:
-                arrowTextureName = "arrowRightArgosy"
+                arrowTextureName = "arrowBackLauberge"
             }
             
             let arrow = SKSpriteNode(imageNamed: arrowTextureName)
-            arrow.size = CGSize(width: ArgosyDeviceManager.shared.deviceType == .pad ? 40:20, height: ArgosyDeviceManager.shared.deviceType == .pad ? 80:40)
-            arrow.position = CGPoint(x: ArgosyDeviceManager.shared.deviceType == .pad ? 40:20, y: 0)
+            arrow.size = CGSize(width: ArgosyDeviceManager.shared.deviceType == .pad ? 100:50, height: ArgosyDeviceManager.shared.deviceType == .pad ? 100:50)
+            arrow.position = CGPoint(x: ArgosyDeviceManager.shared.deviceType == .pad ? -100:-50, y: 0)
             arrow.zRotation = -(.pi/2)
             ship.addChild(arrow)
             shipArrows[ship] = arrow

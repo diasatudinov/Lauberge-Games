@@ -15,7 +15,7 @@ struct ArgosyChooseLevelView: View {
                             presentationMode.wrappedValue.dismiss()
                             
                         } label: {
-                            Image(.backIconArgosy)
+                            Image(.backIconLauberge)
                                 .resizable()
                                 .scaledToFit()
                                 .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 100:50)
@@ -24,11 +24,6 @@ struct ArgosyChooseLevelView: View {
                         ArgosyCoinBg()
                     }.padding([.horizontal, .top])
                 }
-                
-                Image(.levelsTextArgosy)
-                    .resizable()
-                    .scaledToFit()
-                    .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 180:90)
                 
                 
                 Spacer()
@@ -39,7 +34,7 @@ struct ArgosyChooseLevelView: View {
                     LazyVGrid(columns: columns, spacing: 20) {
                         ForEach(0...9, id: \ .self) { index in
                             ZStack {
-                                Image(.levelNumBgArgosy)
+                                Image(.levelNumBgLauberge)
                                     .resizable()
                                     .scaledToFit()
                                     .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 150:100)
@@ -64,7 +59,7 @@ struct ArgosyChooseLevelView: View {
             }
         }.background(
             ZStack {
-                Image(.appBgArgosy)
+                Image(.appBgLauberge)
                     .resizable()
                     .edgesIgnoringSafeArea(.all)
                     .scaledToFill()
