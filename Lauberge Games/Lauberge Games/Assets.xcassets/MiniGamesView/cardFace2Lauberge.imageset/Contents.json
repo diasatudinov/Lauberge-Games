@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "cardFace2Lauberge.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
