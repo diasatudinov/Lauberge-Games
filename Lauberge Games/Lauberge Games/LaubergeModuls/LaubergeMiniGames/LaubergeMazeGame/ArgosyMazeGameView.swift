@@ -1,3 +1,11 @@
+//
+//  ArgosyMazeGameView.swift
+//  Lauberge Games
+//
+//  Created by Dias Atudinov on 20.05.2025.
+//
+
+
 import SwiftUI
 import SpriteKit
 
@@ -15,11 +23,12 @@ struct ArgosyMazeGameView: View {
     var body: some View {
         ZStack {
             VStack(spacing: 5) {
-                Image(.guessTheNumTextArgosy)
+                Image(.mazeGameTextLauberge)
                     .resizable()
                     .scaledToFit()
                     .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 210:105)
-                Image(.guessNumGameBgArgosy)
+                
+                Image(.guessNumGameBgLauberge)
                     .resizable()
                     .scaledToFit()
             }
@@ -33,7 +42,7 @@ struct ArgosyMazeGameView: View {
                             presentationMode.wrappedValue.dismiss()
                             
                         } label: {
-                            Image(.backIconArgosy)
+                            Image(.backIconLauberge)
                                 .resizable()
                                 .scaledToFit()
                                 .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 100:50)
@@ -43,7 +52,7 @@ struct ArgosyMazeGameView: View {
                         
                         ArgosyCoinBg()
 
-                    }.padding([.horizontal, .top])
+                    }.padding([.horizontal])
                 }
                 
                 Spacer()
@@ -53,7 +62,7 @@ struct ArgosyMazeGameView: View {
                         gameScene.moveUp()
                         
                     } label: {
-                        Image(.controlArrowArgosy)
+                        Image(.controlArrowLauberge)
                             .resizable()
                             .scaledToFit()
                             .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 100:50)
@@ -62,7 +71,7 @@ struct ArgosyMazeGameView: View {
                         Button {
                             gameScene.moveLeft()
                         } label: {
-                            Image(.controlArrowArgosy)
+                            Image(.controlArrowLauberge)
                                 .resizable()
                                 .scaledToFit()
                                 .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 100:50)
@@ -73,7 +82,7 @@ struct ArgosyMazeGameView: View {
                         Button {
                             gameScene.moveRight()
                         } label: {
-                            Image(.controlArrowArgosy)
+                            Image(.controlArrowLauberge)
                                 .resizable()
                                 .scaledToFit()
                                 .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 100:50)
@@ -84,7 +93,7 @@ struct ArgosyMazeGameView: View {
                     Button {
                         gameScene.moveDown()
                     } label: {
-                        Image(.controlArrowArgosy)
+                        Image(.controlArrowLauberge)
                             .resizable()
                             .scaledToFit()
                             .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 100:50)
@@ -97,28 +106,50 @@ struct ArgosyMazeGameView: View {
             
             if isWin {
                 ZStack {
-                    VStack(spacing: ArgosyDeviceManager.shared.deviceType == .pad ? -60:-30) {
-                        Image(.winTextArgosy)
+                    
+                    Color.black.opacity(0.5).ignoresSafeArea()
+                    VStack {
+                        
+                        Image(.winBgLauberge)
                             .resizable()
                             .scaledToFit()
-                            .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 500:250)
+                            .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 400:223)
+                        Button {
+                            presentationMode.wrappedValue.dismiss()
+                        } label: {
+                            Image(.nextLvlBtnLauberge)
+                                .resizable()
+                                .scaledToFit()
+                                .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 200:105)
+                        }
                         
                         Button {
                             gameScene.restartGame()
                             isWin = false
                         } label: {
-                            Image(.getTextArgosy)
+                            Image(.restartBtnLauberge)
                                 .resizable()
                                 .scaledToFit()
-                                .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 120:60)
+                                .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 200:105)
                         }
-                    }
+                        
+                        Button {
+                            presentationMode.wrappedValue.dismiss()
+                        } label: {
+                            Image(.backBtnLauberge)
+                                .resizable()
+                                .scaledToFit()
+                                .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 200:105)
+                        }
+                        
+                    }.padding(.bottom, ArgosyDeviceManager.shared.deviceType == .pad ? 100 : 50)
                 }
+                 
             }
             
         }.background(
             ZStack {
-                Image(.appBgArgosy)
+                Image(.appBgLauberge)
                     .resizable()
                     .edgesIgnoringSafeArea(.all)
                     .scaledToFill()
