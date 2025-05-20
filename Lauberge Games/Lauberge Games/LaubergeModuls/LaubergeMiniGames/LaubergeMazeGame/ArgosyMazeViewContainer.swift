@@ -1,3 +1,11 @@
+//
+//  ArgosyMazeViewContainer.swift
+//  Lauberge Games
+//
+//  Created by Dias Atudinov on 20.05.2025.
+//
+
+
 import SwiftUI
 import SpriteKit
 

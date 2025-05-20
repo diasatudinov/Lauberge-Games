@@ -1,3 +1,11 @@
+//
+//  ArgosyMazeScene.swift
+//  Lauberge Games
+//
+//  Created by Dias Atudinov on 20.05.2025.
+//
+
+
 import SpriteKit
 import UIKit
 
@@ -73,7 +81,7 @@ class ArgosyMazeScene: SKScene {
             for c in 0..<gridCols where maze[r][c] == 1 {
                 let x = mazeOrigin.x + CGFloat(c) * tileSize.width + tileSize.width/2
                 let y = mazeOrigin.y + CGFloat(gridRows - r - 1) * tileSize.height + tileSize.height/2
-                let wall = SKSpriteNode(color: .appYellow, size: wallSize)
+                let wall = SKSpriteNode(color: .white, size: wallSize)
                 wall.position = CGPoint(x: x, y: y)
                 addChild(wall)
             }
@@ -88,7 +96,7 @@ class ArgosyMazeScene: SKScene {
         let height = CGFloat(rows) * tileSize.height
 
         let bgSize = CGSize(width: width, height: height)
-        let bgNode = SKSpriteNode(color: .appBrown, size: bgSize)
+        let bgNode = SKSpriteNode(color: .appYellow, size: bgSize)
 
         bgNode.position = CGPoint(
             x: mazeOrigin.x + width / 2,
@@ -102,7 +110,7 @@ class ArgosyMazeScene: SKScene {
 
         let startRow = 1, startCol = 1
         let pos = positionForCell(row: startRow, col: startCol)
-        let texture = SKTexture(imageNamed: "redSquareArgosy")
+        let texture = SKTexture(imageNamed: "blueSquareLauberge")
         player = SKSpriteNode(texture: texture, size: tileSize)
         player.position = pos
         addChild(player)
@@ -115,7 +123,7 @@ class ArgosyMazeScene: SKScene {
         for r in 0..<gridRows {
             for c in 0..<gridCols where maze[r][c] == 2 {
                 let pos = positionForCell(row: r, col: c)
-                let texture = SKTexture(imageNamed: "blueSquareArgosy")
+                let texture = SKTexture(imageNamed: "redSquareLauberge")
                 exitNode = SKSpriteNode(texture: texture, size: tileSize)
                 exitNode.position = pos
                 addChild(exitNode)

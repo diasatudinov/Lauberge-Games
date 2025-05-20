@@ -1,10 +1,18 @@
+//
+//  ArgosyMemorizationView.swift
+//  Lauberge Games
+//
+//  Created by Dias Atudinov on 20.05.2025.
+//
+
+
 import SwiftUI
 
 struct ArgosyMemorizationView: View {
     @StateObject var user = ArgosyUser.shared
     @Environment(\.presentationMode) var presentationMode
     
-    let cardImages = ["cardFace1Argosy", "cardFace2Argosy", "cardFace3Argosy", "cardFace4Argosy", "cardFace5Argosy", "cardFace6Argosy"]
+    let cardImages = ["cardFace1Lauberge", "cardFace2Lauberge", "cardFace3Lauberge", "cardFace4Lauberge", "cardFace5Lauberge", "cardFace6Lauberge"]
     let sequenceLength = 3
     
     @State private var sequence: [Int] = []
@@ -30,7 +38,7 @@ struct ArgosyMemorizationView: View {
                                     presentationMode.wrappedValue.dismiss()
                                     
                                 } label: {
-                                    Image(.backIconArgosy)
+                                    Image(.backIconLauberge)
                                         .resizable()
                                         .scaledToFit()
                                         .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 100:50)
@@ -44,10 +52,10 @@ struct ArgosyMemorizationView: View {
                     }
                 }
                 
-                Image(.simonSaysGameTextArgosy)
+                Image(.simonSaysGameTextLauberge)
                     .resizable()
                     .scaledToFit()
-                    .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 210:105)
+                    .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 136:68)
                 
                 Spacer()
                 
@@ -81,39 +89,73 @@ struct ArgosyMemorizationView: View {
                 
                 if userInputIndex >= sequenceLength {
                     ZStack {
-                        VStack(spacing: ArgosyDeviceManager.shared.deviceType == .pad ? -60:-30) {
-                            Image(.winTextArgosy)
+                        
+                        Color.black.opacity(0.5).ignoresSafeArea()
+                        VStack {
+                            
+                            Image(.winBgLauberge)
                                 .resizable()
                                 .scaledToFit()
-                                .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 500:250)
+                                .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 400:223)
+                            Button {
+                                presentationMode.wrappedValue.dismiss()
+                            } label: {
+                                Image(.nextLvlBtnLauberge)
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 200:105)
+                            }
                             
                             Button {
                                 startGame()
                             } label: {
-                                Image(.getTextArgosy)
+                                Image(.restartBtnLauberge)
                                     .resizable()
                                     .scaledToFit()
-                                    .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 120:60)
+                                    .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 200:105)
                             }
-                        }
+                            
+                            Button {
+                                presentationMode.wrappedValue.dismiss()
+                            } label: {
+                                Image(.backBtnLauberge)
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 200:105)
+                            }
+                            
+                        }.padding(.bottom, ArgosyDeviceManager.shared.deviceType == .pad ? 100 : 50)
                     }
                 } else {
                     ZStack {
-                        VStack(spacing: ArgosyDeviceManager.shared.deviceType == .pad ? -60:-30) {
-                            Image(.loseTextArgosy)
+                        
+                        Color.black.opacity(0.5).ignoresSafeArea()
+                        VStack {
+                            
+                            Image(.loseBgLauberge)
                                 .resizable()
                                 .scaledToFit()
-                                .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 500:250)
+                                .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 400:223)
                             
                             Button {
                                 startGame()
                             } label: {
-                                Image(.restartBtnArgosy)
+                                Image(.restartBtnLauberge)
                                     .resizable()
                                     .scaledToFit()
-                                    .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 120:60)
+                                    .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 200:105)
                             }
-                        }
+                            
+                            Button {
+                                presentationMode.wrappedValue.dismiss()
+                            } label: {
+                                Image(.backBtnLauberge)
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 200:105)
+                            }
+                            
+                        }.padding(.bottom, ArgosyDeviceManager.shared.deviceType == .pad ? 100 : 50)
                     }
                 }
                 
@@ -121,7 +163,7 @@ struct ArgosyMemorizationView: View {
         }
         .background(
             ZStack {
-                Image(.appBgArgosy)
+                Image(.appBgLauberge)
                     .resizable()
                     .edgesIgnoringSafeArea(.all)
                     .scaledToFill()
