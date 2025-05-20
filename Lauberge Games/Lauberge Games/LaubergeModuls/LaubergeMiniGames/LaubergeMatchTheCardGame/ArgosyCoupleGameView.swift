@@ -1,11 +1,17 @@
+//
+//  ArgosyCoupleGameView.swift
+//  Lauberge Games
+//
+//  Created by Dias Atudinov on 20.05.2025.
+//
+
+
 import SwiftUI
-import AVFoundation
 
 struct ArgosyCoupleGameView: View {
     @Environment(\.presentationMode) var presentationMode
 
     @StateObject var user = ArgosyUser.shared
-    @State private var audioPlayer: AVAudioPlayer?
     
     @State private var cards: [ArgosyCard] = []
     @State private var selectedCards: [ArgosyCard] = []
@@ -13,7 +19,13 @@ struct ArgosyCoupleGameView: View {
     @State private var gameEnded: Bool = false
     @State private var isWin: Bool = false
     @State private var pauseShow: Bool = false
-    private let cardTypes = ["cardFace1Argosy", "cardFace2Argosy", "cardFace3Argosy", "cardFace4Argosy", "cardFace5Argosy", "cardFace6Argosy"]
+    private let cardTypes = [
+        "cardFace1Lauberge",
+        "cardFace2Lauberge",
+        "cardFace3Lauberge",
+        "cardFace4Lauberge",
+        "cardFace5Lauberge",
+        "cardFace6Lauberge"]
     private let gridSize = 4
     
     @State private var counter: Int = 0
@@ -30,7 +42,7 @@ struct ArgosyCoupleGameView: View {
                             presentationMode.wrappedValue.dismiss()
                             
                         } label: {
-                            Image(.backIconArgosy)
+                            Image(.backIconLauberge)
                                 .resizable()
                                 .scaledToFit()
                                 .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 100:50)
@@ -42,16 +54,12 @@ struct ArgosyCoupleGameView: View {
                     }.padding(.horizontal)
                     
                     VStack(spacing: ArgosyDeviceManager.shared.deviceType == .pad ? -40:-20) {
-                        Image(.findCoupleTextArgosy)
+                        Image(.findCoupleTextLauberge)
                             .resizable()
                             .scaledToFit()
-                            .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 210:105)
+                            .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 136:68)
                         
                         ZStack {
-                            Image(.coupleTimerBgArgosy)
-                                .resizable()
-                                .scaledToFit()
-                                .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 120:60)
                             
                             Text("\(timeLeft)")
                                 .font(.system(size: ArgosyDeviceManager.shared.deviceType == .pad ? 40:20, weight: .bold))
@@ -60,11 +68,11 @@ struct ArgosyCoupleGameView: View {
                     }
                     Spacer()
                     ZStack {
-                        Image(.findCoupleGameBgArgosy)
+                        Image(.guessNumGameBgLauberge)
                             .resizable()
                             .scaledToFit()
                         
-                        LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 3), spacing: 0) {
+                        LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 3), spacing: 10) {
                             ForEach(cards) { card in
                                 ArgosyCardView(card: card)
                                     .onTapGesture {
@@ -87,39 +95,73 @@ struct ArgosyCoupleGameView: View {
             if gameEnded {
                 if isWin {
                     ZStack {
-                        VStack(spacing: ArgosyDeviceManager.shared.deviceType == .pad ? -60:-30) {
-                            Image(.winTextArgosy)
+                        
+                        Color.black.opacity(0.5).ignoresSafeArea()
+                        VStack {
+                            
+                            Image(.winBgLauberge)
                                 .resizable()
                                 .scaledToFit()
-                                .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 500:250)
+                                .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 400:223)
+                            Button {
+                                presentationMode.wrappedValue.dismiss()
+                            } label: {
+                                Image(.nextLvlBtnLauberge)
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 200:105)
+                            }
                             
                             Button {
                                 setupGame()
                             } label: {
-                                Image(.getTextArgosy)
+                                Image(.restartBtnLauberge)
                                     .resizable()
                                     .scaledToFit()
-                                    .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 120:60)
+                                    .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 200:105)
                             }
-                        }
+                            
+                            Button {
+                                presentationMode.wrappedValue.dismiss()
+                            } label: {
+                                Image(.backBtnLauberge)
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 200:105)
+                            }
+                            
+                        }.padding(.bottom, ArgosyDeviceManager.shared.deviceType == .pad ? 100 : 50)
                     }
                 } else {
                     ZStack {
-                        VStack(spacing: ArgosyDeviceManager.shared.deviceType == .pad ? -60:-30) {
-                            Image(.loseTextArgosy)
+                        
+                        Color.black.opacity(0.5).ignoresSafeArea()
+                        VStack {
+                            
+                            Image(.loseBgLauberge)
                                 .resizable()
                                 .scaledToFit()
-                                .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 500:250)
+                                .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 400:223)
                             
                             Button {
                                 setupGame()
                             } label: {
-                                Image(.restartBtnArgosy)
+                                Image(.restartBtnLauberge)
                                     .resizable()
                                     .scaledToFit()
-                                    .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 120:60)
+                                    .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 200:105)
                             }
-                        }
+                            
+                            Button {
+                                presentationMode.wrappedValue.dismiss()
+                            } label: {
+                                Image(.backBtnLauberge)
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 200:105)
+                            }
+                            
+                        }.padding(.bottom, ArgosyDeviceManager.shared.deviceType == .pad ? 100 : 50)
                     }
                 }
             }
@@ -140,7 +182,7 @@ struct ArgosyCoupleGameView: View {
 //            startTimer()
 //        }
         .background(
-            Image(.appBgArgosy)
+            Image(.appBgLauberge)
                 .resizable()
                 .edgesIgnoringSafeArea(.all)
                 .scaledToFill()
@@ -262,12 +304,12 @@ struct ArgosyCardView: View {
                 Image(card.type)
                     .resizable()
                     .scaledToFit()
-                    .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 210:105)
+                    .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 210:100)
             } else {
-                Image(.cardBackArgosy)
+                Image(.keyBoardBtnLauberge)
                     .resizable()
                     .scaledToFit()
-                    .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 210:105)
+                    .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 210:100)
             }
         }
     }
