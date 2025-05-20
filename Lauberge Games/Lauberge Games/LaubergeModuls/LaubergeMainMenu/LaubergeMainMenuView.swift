@@ -91,7 +91,7 @@ struct LaubergeMainMenuView: View {
             ArgosyChooseLevelView(shopVM: shopVM)
         }
         .fullScreenCover(isPresented: $showMiniGames) {
-//            ArgosyChooseMiniGame()
+            ArgosyChooseMiniGame()
         }
         .fullScreenCover(isPresented: $showAchievement) {
             ArgosyAchievementsView(viewModel: achievementVM)

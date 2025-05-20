@@ -95,16 +95,16 @@ struct ArgosyChooseMiniGame: View {
             }
         )
         .fullScreenCover(isPresented: $game1) {
-//            ArgosyNumberGuessGame()
+            ArgosyNumberGuessGame()
         }
         .fullScreenCover(isPresented: $game2) {
-//            ArgosyCoupleGameView()
+            ArgosyCoupleGameView()
         }
         .fullScreenCover(isPresented: $game3) {
-//            ArgosyMemorizationView()
+            ArgosyMemorizationView()
         }
         .fullScreenCover(isPresented: $game4) {
-//            ArgosyMazeGameView()
+            ArgosyMazeGameView()
         }
     }
 }
