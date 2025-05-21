@@ -1,7 +1,7 @@
 import SwiftUI
 import SpriteKit
 
-struct ArgosyGameView: View {
+struct LaubergeGameView: View {
     @Environment(\.presentationMode) var presentationMode
    
     @State var gameScene: ArgosyGameScene = {
@@ -22,8 +22,8 @@ struct ArgosyGameView: View {
             ArgosySpriteViewContainer(scene: gameScene, isWin: $isWin, score: $score, level: level)
                 .ignoresSafeArea()
             
-            VStack(spacing: ArgosyDeviceManager.shared.deviceType == .pad ? 200:100) {
-                HStack(spacing: ArgosyDeviceManager.shared.deviceType == .pad ? 200:100) {
+            VStack(spacing: LaubergeDeviceManager.shared.deviceType == .pad ? 200:100) {
+                HStack(spacing: LaubergeDeviceManager.shared.deviceType == .pad ? 200:100) {
                     ZStack {
                         Image(.rectangleMainGameLauberge1)
                             .resizable()
@@ -34,7 +34,7 @@ struct ArgosyGameView: View {
                             .scaledToFit()
                             .padding()
                     }
-                    .frame(width: ArgosyDeviceManager.shared.deviceType == .pad ? 280:140,height: ArgosyDeviceManager.shared.deviceType == .pad ? 400:200)
+                    .frame(width: LaubergeDeviceManager.shared.deviceType == .pad ? 280:140,height: LaubergeDeviceManager.shared.deviceType == .pad ? 400:200)
                     
                     ZStack {
                         Image(.rectangleMainGameLauberge2)
@@ -48,10 +48,10 @@ struct ArgosyGameView: View {
                             
                         
                     }
-                    .frame(width: ArgosyDeviceManager.shared.deviceType == .pad ? 280:140,height: ArgosyDeviceManager.shared.deviceType == .pad ? 400:200)
+                    .frame(width: LaubergeDeviceManager.shared.deviceType == .pad ? 280:140,height: LaubergeDeviceManager.shared.deviceType == .pad ? 400:200)
                 }
                 
-                HStack(spacing: ArgosyDeviceManager.shared.deviceType == .pad ? 200:100) {
+                HStack(spacing: LaubergeDeviceManager.shared.deviceType == .pad ? 200:100) {
                     ZStack {
                         Image(.rectangleMainGameLauberge3)
                             .resizable()
@@ -64,7 +64,7 @@ struct ArgosyGameView: View {
                             
                         
                     }
-                    .frame(width: ArgosyDeviceManager.shared.deviceType == .pad ? 280: 140,height: ArgosyDeviceManager.shared.deviceType == .pad ? 400:200)
+                    .frame(width: LaubergeDeviceManager.shared.deviceType == .pad ? 280: 140,height: LaubergeDeviceManager.shared.deviceType == .pad ? 400:200)
                     
                     ZStack {
                         Image(.rectangleMainGameLauberge4)
@@ -77,7 +77,7 @@ struct ArgosyGameView: View {
                             .padding()
                         
                     }
-                    .frame(width: ArgosyDeviceManager.shared.deviceType == .pad ? 280:140,height: ArgosyDeviceManager.shared.deviceType == .pad ? 400:200)
+                    .frame(width: LaubergeDeviceManager.shared.deviceType == .pad ? 280:140,height: LaubergeDeviceManager.shared.deviceType == .pad ? 400:200)
                 }
             }
             
@@ -91,7 +91,7 @@ struct ArgosyGameView: View {
                             Image(.backIconLauberge)
                                 .resizable()
                                 .scaledToFit()
-                                .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 100:50)
+                                .frame(height: LaubergeDeviceManager.shared.deviceType == .pad ? 100:50)
                         }
                         Spacer()
                         
@@ -110,14 +110,14 @@ struct ArgosyGameView: View {
                         Image(.winBgLauberge)
                             .resizable()
                             .scaledToFit()
-                            .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 400:223)
+                            .frame(height: LaubergeDeviceManager.shared.deviceType == .pad ? 400:223)
                         Button {
                             presentationMode.wrappedValue.dismiss()
                         } label: {
                             Image(.nextLvlBtnLauberge)
                                 .resizable()
                                 .scaledToFit()
-                                .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 200:105)
+                                .frame(height: LaubergeDeviceManager.shared.deviceType == .pad ? 200:105)
                         }
                         
                         Button {
@@ -127,7 +127,7 @@ struct ArgosyGameView: View {
                             Image(.restartBtnLauberge)
                                 .resizable()
                                 .scaledToFit()
-                                .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 200:105)
+                                .frame(height: LaubergeDeviceManager.shared.deviceType == .pad ? 200:105)
                         }
                         
                         Button {
@@ -136,10 +136,10 @@ struct ArgosyGameView: View {
                             Image(.backBtnLauberge)
                                 .resizable()
                                 .scaledToFit()
-                                .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 200:105)
+                                .frame(height: LaubergeDeviceManager.shared.deviceType == .pad ? 200:105)
                         }
                         
-                    }.padding(.bottom, ArgosyDeviceManager.shared.deviceType == .pad ? 100 : 50)
+                    }.padding(.bottom, LaubergeDeviceManager.shared.deviceType == .pad ? 100 : 50)
                 }
             }
             
@@ -156,5 +156,5 @@ struct ArgosyGameView: View {
 }
 
 #Preview {
-    ArgosyGameView(shopVM: ArgosyShopViewModel(), level: 0)
+    LaubergeGameView(shopVM: ArgosyShopViewModel(), level: 0)
 }

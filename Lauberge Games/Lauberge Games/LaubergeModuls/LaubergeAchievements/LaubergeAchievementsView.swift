@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct ArgosyAchievementsView: View {
+struct LaubergeAchievementsView: View {
     @Environment(\.presentationMode) var presentationMode
     @ObservedObject var viewModel: ArgosyAchievementsViewModel
     var body: some View {
@@ -16,7 +16,7 @@ struct ArgosyAchievementsView: View {
                             Image(.backIconLauberge)
                                 .resizable()
                                 .scaledToFit()
-                                .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 140:70)
+                                .frame(height: LaubergeDeviceManager.shared.deviceType == .pad ? 140:70)
                         }
                         Spacer()
                     }.padding([.horizontal, .top])
@@ -25,7 +25,7 @@ struct ArgosyAchievementsView: View {
                 Image(.achievementTextLauberge)
                     .resizable()
                     .scaledToFit()
-                    .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 136:68)
+                    .frame(height: LaubergeDeviceManager.shared.deviceType == .pad ? 136:68)
                 
                 ScrollView {
                     
@@ -37,7 +37,7 @@ struct ArgosyAchievementsView: View {
                                 Image(viewModel.achievements[0].image)
                                     .resizable()
                                     .scaledToFit()
-                                    .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 300:150)
+                                    .frame(height: LaubergeDeviceManager.shared.deviceType == .pad ? 300:150)
                                     .opacity(viewModel.achievements[0].isAchieved ? 1 : 0.3)
                                 
                             }.onTapGesture {
@@ -53,7 +53,7 @@ struct ArgosyAchievementsView: View {
                                 Image(viewModel.achievements[1].image)
                                     .resizable()
                                     .scaledToFit()
-                                    .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 300:150)
+                                    .frame(height: LaubergeDeviceManager.shared.deviceType == .pad ? 300:150)
                                     .opacity(viewModel.achievements[1].isAchieved ? 1 : 0.3)
                                 
                             }.onTapGesture {
@@ -66,7 +66,7 @@ struct ArgosyAchievementsView: View {
                                 Image(viewModel.achievements[2].image)
                                     .resizable()
                                     .scaledToFit()
-                                    .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 300:150)
+                                    .frame(height: LaubergeDeviceManager.shared.deviceType == .pad ? 300:150)
                                     .opacity(viewModel.achievements[2].isAchieved ? 1 : 0.3)
                                 
                             }.onTapGesture {
@@ -81,7 +81,7 @@ struct ArgosyAchievementsView: View {
                                 Image(viewModel.achievements[3].image)
                                     .resizable()
                                     .scaledToFit()
-                                    .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 300:150)
+                                    .frame(height: LaubergeDeviceManager.shared.deviceType == .pad ? 300:150)
                                     .opacity(viewModel.achievements[3].isAchieved ? 1 : 0.3)
                                 
                             }.onTapGesture {
@@ -94,7 +94,7 @@ struct ArgosyAchievementsView: View {
                                 Image(viewModel.achievements[4].image)
                                     .resizable()
                                     .scaledToFit()
-                                    .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 300:150)
+                                    .frame(height: LaubergeDeviceManager.shared.deviceType == .pad ? 300:150)
                                     .opacity(viewModel.achievements[4].isAchieved ? 1 : 0.3)
                                 
                             }.onTapGesture {
@@ -122,5 +122,5 @@ struct ArgosyAchievementsView: View {
 }
 
 #Preview {
-    ArgosyAchievementsView(viewModel: ArgosyAchievementsViewModel())
+    LaubergeAchievementsView(viewModel: ArgosyAchievementsViewModel())
 }

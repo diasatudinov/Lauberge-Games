@@ -1,7 +1,7 @@
 import SpriteKit
 import SwiftUI
 
-enum ArgosyMovementType: Int {
+enum LaubergeMovementType: Int {
     case straight = 0
     case turnLeft = 1
     case turnRight = 2
@@ -12,7 +12,7 @@ struct ArgosyShipConfig {
     let name: String
     let initialPosition: CGPoint
     let direction: CGVector
-    let movement: ArgosyMovementType
+    let movement: LaubergeMovementType
 }
 
 class ArgosyGameScene: SKScene, SKPhysicsContactDelegate {
@@ -42,8 +42,8 @@ class ArgosyGameScene: SKScene, SKPhysicsContactDelegate {
         switch index {
         case 0:
             roadConfigs = [
-                (CGPoint(x: w/2, y: fieldCenterY), CGSize(width: w, height: ArgosyDeviceManager.shared.deviceType == .pad ? 200:100)),
-                (CGPoint(x: w/2, y: fieldCenterY), CGSize(width: ArgosyDeviceManager.shared.deviceType == .pad ? 200:100, height: fieldHeight))
+                (CGPoint(x: w/2, y: fieldCenterY), CGSize(width: w, height: LaubergeDeviceManager.shared.deviceType == .pad ? 200:100)),
+                (CGPoint(x: w/2, y: fieldCenterY), CGSize(width: LaubergeDeviceManager.shared.deviceType == .pad ? 200:100, height: fieldHeight))
             ]
             shipConfigs = [
                 ArgosyShipConfig(name: "ship0", initialPosition: CGPoint(x: w/2, y: fieldCenterY + fieldHeight/2 - 50), direction: CGVector(dx: 0, dy: -1), movement: .straight),
@@ -53,8 +53,8 @@ class ArgosyGameScene: SKScene, SKPhysicsContactDelegate {
             ]
         case 1:
             roadConfigs = [
-                (CGPoint(x: w/2, y: fieldCenterY), CGSize(width: w, height: ArgosyDeviceManager.shared.deviceType == .pad ? 200:100)),
-                (CGPoint(x: w/2, y: fieldCenterY), CGSize(width: ArgosyDeviceManager.shared.deviceType == .pad ? 200:100, height: fieldHeight))
+                (CGPoint(x: w/2, y: fieldCenterY), CGSize(width: w, height: LaubergeDeviceManager.shared.deviceType == .pad ? 200:100)),
+                (CGPoint(x: w/2, y: fieldCenterY), CGSize(width: LaubergeDeviceManager.shared.deviceType == .pad ? 200:100, height: fieldHeight))
             ]
             shipConfigs = [
                 ArgosyShipConfig(name: "ship0", initialPosition: CGPoint(x: w/2, y: fieldCenterY + fieldHeight/2 - 50), direction: CGVector(dx: 0, dy: 1), movement: .straight),
@@ -65,8 +65,8 @@ class ArgosyGameScene: SKScene, SKPhysicsContactDelegate {
             
         case 2:
             roadConfigs = [
-                (CGPoint(x: w/2, y: fieldCenterY), CGSize(width: w, height: ArgosyDeviceManager.shared.deviceType == .pad ? 200:100)),
-                (CGPoint(x: w/2, y: fieldCenterY), CGSize(width: ArgosyDeviceManager.shared.deviceType == .pad ? 200:100, height: fieldHeight))
+                (CGPoint(x: w/2, y: fieldCenterY), CGSize(width: w, height: LaubergeDeviceManager.shared.deviceType == .pad ? 200:100)),
+                (CGPoint(x: w/2, y: fieldCenterY), CGSize(width: LaubergeDeviceManager.shared.deviceType == .pad ? 200:100, height: fieldHeight))
             ]
             shipConfigs = [
                 ArgosyShipConfig(name: "ship0", initialPosition: CGPoint(x: w/2, y: fieldCenterY + fieldHeight/2 - 50), direction: CGVector(dx: 0, dy: -1), movement: .turnLeft),
@@ -77,8 +77,8 @@ class ArgosyGameScene: SKScene, SKPhysicsContactDelegate {
             
         case 3:
             roadConfigs = [
-                (CGPoint(x: w/2, y: fieldCenterY), CGSize(width: w, height: ArgosyDeviceManager.shared.deviceType == .pad ? 200:100)),
-                (CGPoint(x: w/2, y: fieldCenterY), CGSize(width: ArgosyDeviceManager.shared.deviceType == .pad ? 200:100, height: fieldHeight))
+                (CGPoint(x: w/2, y: fieldCenterY), CGSize(width: w, height: LaubergeDeviceManager.shared.deviceType == .pad ? 200:100)),
+                (CGPoint(x: w/2, y: fieldCenterY), CGSize(width: LaubergeDeviceManager.shared.deviceType == .pad ? 200:100, height: fieldHeight))
             ]
             shipConfigs = [
                 ArgosyShipConfig(name: "ship0", initialPosition: CGPoint(x: w/2, y: fieldCenterY + fieldHeight/2 - 50), direction: CGVector(dx: 0, dy: -1), movement: .straight),
@@ -89,8 +89,8 @@ class ArgosyGameScene: SKScene, SKPhysicsContactDelegate {
             
         case 4:
             roadConfigs = [
-                (CGPoint(x: w/2, y: fieldCenterY), CGSize(width: w, height: ArgosyDeviceManager.shared.deviceType == .pad ? 200:100)),
-                (CGPoint(x: w/2, y: fieldCenterY), CGSize(width: ArgosyDeviceManager.shared.deviceType == .pad ? 200:100, height: fieldHeight))
+                (CGPoint(x: w/2, y: fieldCenterY), CGSize(width: w, height: LaubergeDeviceManager.shared.deviceType == .pad ? 200:100)),
+                (CGPoint(x: w/2, y: fieldCenterY), CGSize(width: LaubergeDeviceManager.shared.deviceType == .pad ? 200:100, height: fieldHeight))
             ]
             shipConfigs = [
                 ArgosyShipConfig(name: "ship0", initialPosition: CGPoint(x: w/2, y: fieldCenterY + fieldHeight/2 - 50), direction: CGVector(dx: 0, dy: -1), movement: .straight),
@@ -101,8 +101,8 @@ class ArgosyGameScene: SKScene, SKPhysicsContactDelegate {
             
         case 5:
             roadConfigs = [
-                (CGPoint(x: w/2, y: fieldCenterY), CGSize(width: w, height: ArgosyDeviceManager.shared.deviceType == .pad ? 200:100)),
-                (CGPoint(x: w/2, y: fieldCenterY), CGSize(width: ArgosyDeviceManager.shared.deviceType == .pad ? 200:100, height: fieldHeight))
+                (CGPoint(x: w/2, y: fieldCenterY), CGSize(width: w, height: LaubergeDeviceManager.shared.deviceType == .pad ? 200:100)),
+                (CGPoint(x: w/2, y: fieldCenterY), CGSize(width: LaubergeDeviceManager.shared.deviceType == .pad ? 200:100, height: fieldHeight))
             ]
             shipConfigs = [
                 ArgosyShipConfig(name: "ship0", initialPosition: CGPoint(x: w/2, y: fieldCenterY + fieldHeight/2 - 50), direction: CGVector(dx: 0, dy: -1), movement: .turnLeft),
@@ -113,8 +113,8 @@ class ArgosyGameScene: SKScene, SKPhysicsContactDelegate {
             
         case 6:
             roadConfigs = [
-                (CGPoint(x: w/2, y: fieldCenterY), CGSize(width: w, height: ArgosyDeviceManager.shared.deviceType == .pad ? 200:100)),
-                (CGPoint(x: w/2, y: fieldCenterY), CGSize(width: ArgosyDeviceManager.shared.deviceType == .pad ? 200:100, height: fieldHeight))
+                (CGPoint(x: w/2, y: fieldCenterY), CGSize(width: w, height: LaubergeDeviceManager.shared.deviceType == .pad ? 200:100)),
+                (CGPoint(x: w/2, y: fieldCenterY), CGSize(width: LaubergeDeviceManager.shared.deviceType == .pad ? 200:100, height: fieldHeight))
             ]
             shipConfigs = [
                 ArgosyShipConfig(name: "ship0", initialPosition: CGPoint(x: w/2, y: fieldCenterY + fieldHeight/2 - 50), direction: CGVector(dx: 0, dy: -1), movement: .straight),
@@ -125,8 +125,8 @@ class ArgosyGameScene: SKScene, SKPhysicsContactDelegate {
             
         case 7:
             roadConfigs = [
-                (CGPoint(x: w/2, y: fieldCenterY), CGSize(width: w, height: ArgosyDeviceManager.shared.deviceType == .pad ? 200:100)),
-                (CGPoint(x: w/2, y: fieldCenterY), CGSize(width: ArgosyDeviceManager.shared.deviceType == .pad ? 200:100, height: fieldHeight))
+                (CGPoint(x: w/2, y: fieldCenterY), CGSize(width: w, height: LaubergeDeviceManager.shared.deviceType == .pad ? 200:100)),
+                (CGPoint(x: w/2, y: fieldCenterY), CGSize(width: LaubergeDeviceManager.shared.deviceType == .pad ? 200:100, height: fieldHeight))
             ]
             shipConfigs = [
                 ArgosyShipConfig(name: "ship0", initialPosition: CGPoint(x: w/2, y: fieldCenterY + fieldHeight/2 - 50), direction: CGVector(dx: 0, dy: -1), movement: .straight),
@@ -137,8 +137,8 @@ class ArgosyGameScene: SKScene, SKPhysicsContactDelegate {
             
         case 8:
             roadConfigs = [
-                (CGPoint(x: w/2, y: fieldCenterY), CGSize(width: w, height: ArgosyDeviceManager.shared.deviceType == .pad ? 200:100)),
-                (CGPoint(x: w/2, y: fieldCenterY), CGSize(width: ArgosyDeviceManager.shared.deviceType == .pad ? 200:100, height: fieldHeight))
+                (CGPoint(x: w/2, y: fieldCenterY), CGSize(width: w, height: LaubergeDeviceManager.shared.deviceType == .pad ? 200:100)),
+                (CGPoint(x: w/2, y: fieldCenterY), CGSize(width: LaubergeDeviceManager.shared.deviceType == .pad ? 200:100, height: fieldHeight))
             ]
             shipConfigs = [
                 ArgosyShipConfig(name: "ship0", initialPosition: CGPoint(x: w/2, y: fieldCenterY + fieldHeight/2 - 50), direction: CGVector(dx: 0, dy: -1), movement: .straight),
@@ -149,8 +149,8 @@ class ArgosyGameScene: SKScene, SKPhysicsContactDelegate {
             
         case 9:
             roadConfigs = [
-                (CGPoint(x: w/2, y: fieldCenterY), CGSize(width: w, height: ArgosyDeviceManager.shared.deviceType == .pad ? 200:100)),
-                (CGPoint(x: w/2, y: fieldCenterY), CGSize(width: ArgosyDeviceManager.shared.deviceType == .pad ? 200:100, height: fieldHeight))
+                (CGPoint(x: w/2, y: fieldCenterY), CGSize(width: w, height: LaubergeDeviceManager.shared.deviceType == .pad ? 200:100)),
+                (CGPoint(x: w/2, y: fieldCenterY), CGSize(width: LaubergeDeviceManager.shared.deviceType == .pad ? 200:100, height: fieldHeight))
             ]
             shipConfigs = [
                 ArgosyShipConfig(name: "ship0", initialPosition: CGPoint(x: w/2, y: fieldCenterY + fieldHeight/2 - 50), direction: CGVector(dx: 0, dy: 1), movement: .straight),
@@ -170,7 +170,7 @@ class ArgosyGameScene: SKScene, SKPhysicsContactDelegate {
         guard let item = shopVM.currentPersonItem else { return }
         for shipConfig in shipConfigs {
             let ship = SKSpriteNode(imageNamed: item.image)
-            ship.size = CGSize(width: ArgosyDeviceManager.shared.deviceType == .pad ? 184:92, height: ArgosyDeviceManager.shared.deviceType == .pad ? 112:56)
+            ship.size = CGSize(width: LaubergeDeviceManager.shared.deviceType == .pad ? 184:92, height: LaubergeDeviceManager.shared.deviceType == .pad ? 112:56)
             ship.position = shipConfig.initialPosition
             ship.name = shipConfig.name
             ship.zRotation = atan2(shipConfig.direction.dy, shipConfig.direction.dx)
@@ -179,7 +179,7 @@ class ArgosyGameScene: SKScene, SKPhysicsContactDelegate {
                 "direction": NSValue(cgVector: shipConfig.direction),
                 "movementType": shipConfig.movement.rawValue
             ]
-            ship.physicsBody = SKPhysicsBody(circleOfRadius: ArgosyDeviceManager.shared.deviceType == .pad ? 40:20)
+            ship.physicsBody = SKPhysicsBody(circleOfRadius: LaubergeDeviceManager.shared.deviceType == .pad ? 40:20)
             ship.physicsBody?.categoryBitMask = 0x1 << 0
             ship.physicsBody?.contactTestBitMask = 0x1 << 0
             ship.physicsBody?.collisionBitMask = 0
@@ -199,14 +199,14 @@ class ArgosyGameScene: SKScene, SKPhysicsContactDelegate {
             }
             
             let arrow = SKSpriteNode(imageNamed: arrowTextureName)
-            arrow.size = CGSize(width: ArgosyDeviceManager.shared.deviceType == .pad ? 100:50, height: ArgosyDeviceManager.shared.deviceType == .pad ? 100:50)
-            arrow.position = CGPoint(x: ArgosyDeviceManager.shared.deviceType == .pad ? -100:-50, y: 0)
+            arrow.size = CGSize(width: LaubergeDeviceManager.shared.deviceType == .pad ? 100:50, height: LaubergeDeviceManager.shared.deviceType == .pad ? 100:50)
+            arrow.position = CGPoint(x: LaubergeDeviceManager.shared.deviceType == .pad ? -100:-50, y: 0)
             arrow.zRotation = -(.pi/2)
             ship.addChild(arrow)
             shipArrows[ship] = arrow
             
             let bigArrow = SKSpriteNode(imageNamed: "arrow")
-            bigArrow.size = CGSize(width: ArgosyDeviceManager.shared.deviceType == .pad ? 120:60, height: ArgosyDeviceManager.shared.deviceType == .pad ? 60:30)
+            bigArrow.size = CGSize(width: LaubergeDeviceManager.shared.deviceType == .pad ? 120:60, height: LaubergeDeviceManager.shared.deviceType == .pad ? 60:30)
             bigArrow.position = CGPoint(x: shipConfig.initialPosition.x, y: shipConfig.initialPosition.y + 50)
             bigArrow.zRotation = ship.zRotation - .pi/2
             //addChild(bigArrow)
@@ -235,7 +235,7 @@ class ArgosyGameScene: SKScene, SKPhysicsContactDelegate {
         guard let dVal = ship.userData?["direction"] as? NSValue,
               let tVal = ship.userData?["movementType"] as? NSNumber else { return }
         let dir = dVal.cgVectorValue
-        let type = ArgosyMovementType(rawValue: tVal.intValue) ?? .straight
+        let type = LaubergeMovementType(rawValue: tVal.intValue) ?? .straight
         let off: CGFloat = 2000
         var actions: [SKAction] = []
         
@@ -307,5 +307,5 @@ class ArgosyGameScene: SKScene, SKPhysicsContactDelegate {
 }
 
 #Preview {
-    ArgosyGameView(shopVM: ArgosyShopViewModel(), level: 0)
+    LaubergeGameView(shopVM: ArgosyShopViewModel(), level: 0)
 }

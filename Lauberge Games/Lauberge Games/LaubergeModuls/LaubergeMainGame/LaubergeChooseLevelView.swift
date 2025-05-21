@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct ArgosyChooseLevelView: View {
+struct LaubergeChooseLevelView: View {
     @Environment(\.presentationMode) var presentationMode
     @ObservedObject var shopVM: ArgosyShopViewModel
     
@@ -18,10 +18,10 @@ struct ArgosyChooseLevelView: View {
                             Image(.backIconLauberge)
                                 .resizable()
                                 .scaledToFit()
-                                .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 100:50)
+                                .frame(height: LaubergeDeviceManager.shared.deviceType == .pad ? 100:50)
                         }
                         Spacer()
-                        ArgosyCoinBg()
+                        LaubergeCoinBg()
                     }.padding([.horizontal, .top])
                 }
                 
@@ -37,10 +37,10 @@ struct ArgosyChooseLevelView: View {
                                 Image(.levelNumBgLauberge)
                                     .resizable()
                                     .scaledToFit()
-                                    .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 150:100)
+                                    .frame(height: LaubergeDeviceManager.shared.deviceType == .pad ? 150:100)
                                 
                                 Text("\(index + 1)")
-                                    .font(.system(size: ArgosyDeviceManager.shared.deviceType == .pad ? 80:40, weight: .bold))
+                                    .font(.system(size: LaubergeDeviceManager.shared.deviceType == .pad ? 80:40, weight: .bold))
                                     .foregroundStyle(.white)
                             }
                             .onTapGesture {
@@ -51,7 +51,7 @@ struct ArgosyChooseLevelView: View {
                                 
                             }
                         }
-                    }.frame(width: ArgosyDeviceManager.shared.deviceType == .pad ? 500:340)
+                    }.frame(width: LaubergeDeviceManager.shared.deviceType == .pad ? 500:340)
             
                 }
                 Spacer()
@@ -74,5 +74,5 @@ struct ArgosyChooseLevelView: View {
 
 
 #Preview {
-    ArgosyChooseLevelView(shopVM: ArgosyShopViewModel())
+    LaubergeChooseLevelView(shopVM: ArgosyShopViewModel())
 }

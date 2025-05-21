@@ -1,14 +1,6 @@
-//
-//  ArgosyNumberGuessGame.swift
-//  Lauberge Games
-//
-//  Created by Dias Atudinov on 20.05.2025.
-//
-
-
 import SwiftUI
 
-struct ArgosyNumberGuessGame: View {
+struct LaubergeNumberGuessGame: View {
     @Environment(\.presentationMode) var presentationMode
     @State private var target = Int.random(in: 100...999)
     @State private var guessDigits: [String] = []
@@ -23,7 +15,7 @@ struct ArgosyNumberGuessGame: View {
 
         var body: some View {
             ZStack {
-                VStack(spacing: ArgosyDeviceManager.shared.deviceType == .pad ? 40:20) {
+                VStack(spacing: LaubergeDeviceManager.shared.deviceType == .pad ? 40:20) {
                     HStack(alignment: .top) {
                         Button {
                             presentationMode.wrappedValue.dismiss()
@@ -32,17 +24,17 @@ struct ArgosyNumberGuessGame: View {
                             Image(.backIconLauberge)
                                 .resizable()
                                 .scaledToFit()
-                                .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 100:50)
+                                .frame(height: LaubergeDeviceManager.shared.deviceType == .pad ? 100:50)
                         }
                         Spacer()
                         
-                        ArgosyCoinBg()
+                        LaubergeCoinBg()
                     }.padding([.horizontal, .top])
 
                     Image(.guessTheNumTextLauberge)
                         .resizable()
                         .scaledToFit()
-                        .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 210:105)
+                        .frame(height: LaubergeDeviceManager.shared.deviceType == .pad ? 210:105)
                     
                     ZStack {
                         
@@ -61,14 +53,14 @@ struct ArgosyNumberGuessGame: View {
                                         Text( idx < guessDigits.count ? guessDigits[idx] : "" )
                                             .font(.system(size: 36, weight: .bold))
                                             .foregroundColor(.white)
-                                    }.frame(width: ArgosyDeviceManager.shared.deviceType == .pad ? 150:103, height: ArgosyDeviceManager.shared.deviceType == .pad ? 150:103)
+                                    }.frame(width: LaubergeDeviceManager.shared.deviceType == .pad ? 150:103, height: LaubergeDeviceManager.shared.deviceType == .pad ? 150:103)
                                 }
                             }
                             .padding(.vertical)
                             
                             
                             let columns = Array(repeating: GridItem(.flexible(), spacing: 0), count: 3)
-                            LazyVGrid(columns: columns, spacing: ArgosyDeviceManager.shared.deviceType == .pad ? 24:12) {
+                            LazyVGrid(columns: columns, spacing: LaubergeDeviceManager.shared.deviceType == .pad ? 24:12) {
                                 ForEach(padNumbers, id: \ .self) { num in
                                     Button(action: { numberPressed(num) }) {
                                         ZStack {
@@ -76,13 +68,13 @@ struct ArgosyNumberGuessGame: View {
                                                 .resizable()
                                                 .scaledToFit()
                                             Text("\(num)")
-                                                .font(.system(size: ArgosyDeviceManager.shared.deviceType == .pad ? 72:36, weight: .bold))
+                                                .font(.system(size: LaubergeDeviceManager.shared.deviceType == .pad ? 72:36, weight: .bold))
                                                 .foregroundColor(.white)
-                                        }.frame(width: ArgosyDeviceManager.shared.deviceType == .pad ? 144:100, height: ArgosyDeviceManager.shared.deviceType == .pad ? 144:100)
+                                        }.frame(width: LaubergeDeviceManager.shared.deviceType == .pad ? 144:100, height: LaubergeDeviceManager.shared.deviceType == .pad ? 144:100)
                                     }
                                     .disabled(guessDigits.count >= 3)
                                 }
-                            }.frame(width: ArgosyDeviceManager.shared.deviceType == .pad ? 480:310)
+                            }.frame(width: LaubergeDeviceManager.shared.deviceType == .pad ? 480:310)
                                 .padding(.horizontal)
                         }
                     }
@@ -103,12 +95,12 @@ struct ArgosyNumberGuessGame: View {
                             Image(.guessHigherLauberge)
                                 .resizable()
                                 .scaledToFit()
-                                .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 260:130)
+                                .frame(height: LaubergeDeviceManager.shared.deviceType == .pad ? 260:130)
                         } else if Int(guessDigits.joined()) ?? 0 > target{
                             Image(.guessLowerLauberge)
                                 .resizable()
                                 .scaledToFit()
-                                .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 260:130)
+                                .frame(height: LaubergeDeviceManager.shared.deviceType == .pad ? 260:130)
                         } else {
                             ZStack {
                                 
@@ -118,14 +110,14 @@ struct ArgosyNumberGuessGame: View {
                                     Image(.winBgLauberge)
                                         .resizable()
                                         .scaledToFit()
-                                        .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 400:223)
+                                        .frame(height: LaubergeDeviceManager.shared.deviceType == .pad ? 400:223)
                                     Button {
                                         presentationMode.wrappedValue.dismiss()
                                     } label: {
                                         Image(.nextLvlBtnLauberge)
                                             .resizable()
                                             .scaledToFit()
-                                            .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 200:105)
+                                            .frame(height: LaubergeDeviceManager.shared.deviceType == .pad ? 200:105)
                                     }
                                     
                                     Button {
@@ -134,7 +126,7 @@ struct ArgosyNumberGuessGame: View {
                                         Image(.restartBtnLauberge)
                                             .resizable()
                                             .scaledToFit()
-                                            .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 200:105)
+                                            .frame(height: LaubergeDeviceManager.shared.deviceType == .pad ? 200:105)
                                     }
                                     
                                     Button {
@@ -143,10 +135,10 @@ struct ArgosyNumberGuessGame: View {
                                         Image(.backBtnLauberge)
                                             .resizable()
                                             .scaledToFit()
-                                            .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 200:105)
+                                            .frame(height: LaubergeDeviceManager.shared.deviceType == .pad ? 200:105)
                                     }
                                     
-                                }.padding(.bottom, ArgosyDeviceManager.shared.deviceType == .pad ? 100 : 50)
+                                }.padding(.bottom, LaubergeDeviceManager.shared.deviceType == .pad ? 100 : 50)
                             }
                         }
                     }
@@ -179,7 +171,7 @@ struct ArgosyNumberGuessGame: View {
             feedback = "Too high!"
         } else {
             feedback = "You got it in \(attempts) tries!"
-            ArgosyUser.shared.updateUserMoney(for: 100)
+            LaubergeUser.shared.updateUserMoney(for: 100)
         }
         if feedback.starts(with: "You got it") {
         } else {
@@ -200,5 +192,5 @@ struct ArgosyNumberGuessGame: View {
 }
 
 #Preview {
-    ArgosyNumberGuessGame()
+    LaubergeNumberGuessGame()
 }

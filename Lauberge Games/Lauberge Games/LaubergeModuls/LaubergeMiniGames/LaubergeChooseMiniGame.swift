@@ -1,14 +1,6 @@
-//
-//  ArgosyChooseMiniGame.swift
-//  Lauberge Games
-//
-//  Created by Dias Atudinov on 20.05.2025.
-//
-
-
 import SwiftUI
 
-struct ArgosyChooseMiniGame: View {
+struct LaubergeChooseMiniGame: View {
     @Environment(\.presentationMode) var presentationMode
     @State private var game1 = false
     @State private var game2 = false
@@ -26,11 +18,11 @@ struct ArgosyChooseMiniGame: View {
                             Image(.backIconLauberge)
                                 .resizable()
                                 .scaledToFit()
-                                .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 100:50)
+                                .frame(height: LaubergeDeviceManager.shared.deviceType == .pad ? 100:50)
                         }
                         Spacer()
                         
-                        ArgosyCoinBg()
+                        LaubergeCoinBg()
                     }.padding([.horizontal, .top])
                     
                 }
@@ -38,7 +30,7 @@ struct ArgosyChooseMiniGame: View {
                 Image(.miniGameTextLauberge)
                     .resizable()
                     .scaledToFit()
-                    .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 136:68)
+                    .frame(height: LaubergeDeviceManager.shared.deviceType == .pad ? 136:68)
                 Spacer()
                 
                 VStack(spacing: 13) {
@@ -48,7 +40,7 @@ struct ArgosyChooseMiniGame: View {
                         Image(.guessTheNumTextLauberge)
                             .resizable()
                             .scaledToFit()
-                            .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 180:90)
+                            .frame(height: LaubergeDeviceManager.shared.deviceType == .pad ? 180:90)
                           
                     }
                     
@@ -58,7 +50,7 @@ struct ArgosyChooseMiniGame: View {
                         Image(.matchCardTextLauberge)
                             .resizable()
                             .scaledToFit()
-                            .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 180:90)
+                            .frame(height: LaubergeDeviceManager.shared.deviceType == .pad ? 180:90)
                           
                     }
                     
@@ -68,7 +60,7 @@ struct ArgosyChooseMiniGame: View {
                         Image(.simonSaysTextLauberge)
                             .resizable()
                             .scaledToFit()
-                            .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 180:90)
+                            .frame(height: LaubergeDeviceManager.shared.deviceType == .pad ? 180:90)
                           
                     }
                     
@@ -78,7 +70,7 @@ struct ArgosyChooseMiniGame: View {
                         Image(.mazeTextLauberge)
                             .resizable()
                             .scaledToFit()
-                            .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 180:90)
+                            .frame(height: LaubergeDeviceManager.shared.deviceType == .pad ? 180:90)
                           
                     }
                 }
@@ -95,20 +87,20 @@ struct ArgosyChooseMiniGame: View {
             }
         )
         .fullScreenCover(isPresented: $game1) {
-            ArgosyNumberGuessGame()
+            LaubergeNumberGuessGame()
         }
         .fullScreenCover(isPresented: $game2) {
-            ArgosyCoupleGameView()
+            LaubergeCoupleGameView()
         }
         .fullScreenCover(isPresented: $game3) {
-            ArgosyMemorizationView()
+            LaubergeMemorizationView()
         }
         .fullScreenCover(isPresented: $game4) {
-            ArgosyMazeGameView()
+            LaubergeMazeGameView()
         }
     }
 }
 
 #Preview {
-    ArgosyChooseMiniGame()
+    LaubergeChooseMiniGame()
 }

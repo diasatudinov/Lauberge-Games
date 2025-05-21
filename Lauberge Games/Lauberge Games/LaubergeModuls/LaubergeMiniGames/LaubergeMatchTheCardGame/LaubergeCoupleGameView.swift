@@ -1,17 +1,9 @@
-//
-//  ArgosyCoupleGameView.swift
-//  Lauberge Games
-//
-//  Created by Dias Atudinov on 20.05.2025.
-//
-
-
 import SwiftUI
 
-struct ArgosyCoupleGameView: View {
+struct LaubergeCoupleGameView: View {
     @Environment(\.presentationMode) var presentationMode
 
-    @StateObject var user = ArgosyUser.shared
+    @StateObject var user = LaubergeUser.shared
     
     @State private var cards: [ArgosyCard] = []
     @State private var selectedCards: [ArgosyCard] = []
@@ -45,24 +37,24 @@ struct ArgosyCoupleGameView: View {
                             Image(.backIconLauberge)
                                 .resizable()
                                 .scaledToFit()
-                                .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 100:50)
+                                .frame(height: LaubergeDeviceManager.shared.deviceType == .pad ? 100:50)
                         }
                         
                         Spacer()
                         
-                        ArgosyCoinBg()
+                        LaubergeCoinBg()
                     }.padding(.horizontal)
                     
-                    VStack(spacing: ArgosyDeviceManager.shared.deviceType == .pad ? -40:-20) {
+                    VStack(spacing: LaubergeDeviceManager.shared.deviceType == .pad ? -40:-20) {
                         Image(.findCoupleTextLauberge)
                             .resizable()
                             .scaledToFit()
-                            .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 136:68)
+                            .frame(height: LaubergeDeviceManager.shared.deviceType == .pad ? 136:68)
                         
                         ZStack {
                             
                             Text("\(timeLeft)")
-                                .font(.system(size: ArgosyDeviceManager.shared.deviceType == .pad ? 40:20, weight: .bold))
+                                .font(.system(size: LaubergeDeviceManager.shared.deviceType == .pad ? 40:20, weight: .bold))
                                 .foregroundStyle(.white)
                         }
                     }
@@ -83,8 +75,8 @@ struct ArgosyCoupleGameView: View {
                             }
                             
                         }
-                        .frame(width: ArgosyDeviceManager.shared.deviceType == .pad ? 500:332)
-                    }.frame(width: ArgosyDeviceManager.shared.deviceType == .pad ? 600:382)
+                        .frame(width: LaubergeDeviceManager.shared.deviceType == .pad ? 500:332)
+                    }.frame(width: LaubergeDeviceManager.shared.deviceType == .pad ? 600:382)
                     
                     Spacer()
                 }
@@ -102,14 +94,14 @@ struct ArgosyCoupleGameView: View {
                             Image(.winBgLauberge)
                                 .resizable()
                                 .scaledToFit()
-                                .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 400:223)
+                                .frame(height: LaubergeDeviceManager.shared.deviceType == .pad ? 400:223)
                             Button {
                                 presentationMode.wrappedValue.dismiss()
                             } label: {
                                 Image(.nextLvlBtnLauberge)
                                     .resizable()
                                     .scaledToFit()
-                                    .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 200:105)
+                                    .frame(height: LaubergeDeviceManager.shared.deviceType == .pad ? 200:105)
                             }
                             
                             Button {
@@ -118,7 +110,7 @@ struct ArgosyCoupleGameView: View {
                                 Image(.restartBtnLauberge)
                                     .resizable()
                                     .scaledToFit()
-                                    .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 200:105)
+                                    .frame(height: LaubergeDeviceManager.shared.deviceType == .pad ? 200:105)
                             }
                             
                             Button {
@@ -127,10 +119,10 @@ struct ArgosyCoupleGameView: View {
                                 Image(.backBtnLauberge)
                                     .resizable()
                                     .scaledToFit()
-                                    .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 200:105)
+                                    .frame(height: LaubergeDeviceManager.shared.deviceType == .pad ? 200:105)
                             }
                             
-                        }.padding(.bottom, ArgosyDeviceManager.shared.deviceType == .pad ? 100 : 50)
+                        }.padding(.bottom, LaubergeDeviceManager.shared.deviceType == .pad ? 100 : 50)
                     }
                 } else {
                     ZStack {
@@ -141,7 +133,7 @@ struct ArgosyCoupleGameView: View {
                             Image(.loseBgLauberge)
                                 .resizable()
                                 .scaledToFit()
-                                .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 400:223)
+                                .frame(height: LaubergeDeviceManager.shared.deviceType == .pad ? 400:223)
                             
                             Button {
                                 setupGame()
@@ -149,7 +141,7 @@ struct ArgosyCoupleGameView: View {
                                 Image(.restartBtnLauberge)
                                     .resizable()
                                     .scaledToFit()
-                                    .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 200:105)
+                                    .frame(height: LaubergeDeviceManager.shared.deviceType == .pad ? 200:105)
                             }
                             
                             Button {
@@ -158,10 +150,10 @@ struct ArgosyCoupleGameView: View {
                                 Image(.backBtnLauberge)
                                     .resizable()
                                     .scaledToFit()
-                                    .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 200:105)
+                                    .frame(height: LaubergeDeviceManager.shared.deviceType == .pad ? 200:105)
                             }
                             
-                        }.padding(.bottom, ArgosyDeviceManager.shared.deviceType == .pad ? 100 : 50)
+                        }.padding(.bottom, LaubergeDeviceManager.shared.deviceType == .pad ? 100 : 50)
                     }
                 }
             }
@@ -292,7 +284,7 @@ struct ArgosyCoupleGameView: View {
 }
 
 #Preview {
-    ArgosyCoupleGameView()
+    LaubergeCoupleGameView()
 }
 
 struct ArgosyCardView: View {
@@ -304,12 +296,12 @@ struct ArgosyCardView: View {
                 Image(card.type)
                     .resizable()
                     .scaledToFit()
-                    .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 210:100)
+                    .frame(height: LaubergeDeviceManager.shared.deviceType == .pad ? 210:100)
             } else {
                 Image(.keyBoardBtnLauberge)
                     .resizable()
                     .scaledToFit()
-                    .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 210:100)
+                    .frame(height: LaubergeDeviceManager.shared.deviceType == .pad ? 210:100)
             }
         }
     }

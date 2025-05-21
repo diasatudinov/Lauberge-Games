@@ -1,15 +1,7 @@
-//
-//  ArgosyMazeScene.swift
-//  Lauberge Games
-//
-//  Created by Dias Atudinov on 20.05.2025.
-//
-
-
 import SpriteKit
 import UIKit
 
-class ArgosyMazeScene: SKScene {
+class LaubergeMazeScene: SKScene {
 
     private var maze: [[Int]] = []
     private let rows = 15

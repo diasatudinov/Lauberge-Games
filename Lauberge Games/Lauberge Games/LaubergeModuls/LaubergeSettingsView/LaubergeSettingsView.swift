@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct ArgosySettingsView: View {
+struct LaubergeSettingsView: View {
     @Environment(\.presentationMode) var presentationMode
 
     @ObservedObject var settingsVM: ArgosySettingsViewModel
@@ -25,7 +25,7 @@ struct ArgosySettingsView: View {
                             Image(settingsVM.soundEnabled ? .soundOnLauberge:.soundOffLauberge)
                                 .resizable()
                                 .scaledToFit()
-                                .frame(width: ArgosyDeviceManager.shared.deviceType == .pad ? 200:100, height: ArgosyDeviceManager.shared.deviceType == .pad ? 140:70)
+                                .frame(width: LaubergeDeviceManager.shared.deviceType == .pad ? 200:100, height: LaubergeDeviceManager.shared.deviceType == .pad ? 140:70)
                         }
                         
                         
@@ -38,19 +38,19 @@ struct ArgosySettingsView: View {
                             Image(settingsVM.musicEnabled ? .musicOnLauberge:.musicOffLauberge)
                                 .resizable()
                                 .scaledToFit()
-                                .frame(width: ArgosyDeviceManager.shared.deviceType == .pad ? 200:100,height: ArgosyDeviceManager.shared.deviceType == .pad ? 140:70)
+                                .frame(width: LaubergeDeviceManager.shared.deviceType == .pad ? 200:100,height: LaubergeDeviceManager.shared.deviceType == .pad ? 140:70)
                         }
                         
                         
                     }
                     
                     
-                }.frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 342:171)
+                }.frame(height: LaubergeDeviceManager.shared.deviceType == .pad ? 342:171)
                 Spacer()
                 Image(.languageTextLauberge)
                     .resizable()
                     .scaledToFit()
-                    .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 180:90)
+                    .frame(height: LaubergeDeviceManager.shared.deviceType == .pad ? 180:90)
                     .offset(y: -150)
                 
             }
@@ -66,18 +66,18 @@ struct ArgosySettingsView: View {
                             Image(.backIconLauberge)
                                 .resizable()
                                 .scaledToFit()
-                                .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 100:50)
+                                .frame(height: LaubergeDeviceManager.shared.deviceType == .pad ? 100:50)
                         }
                         Spacer()
                        
-                        ArgosyCoinBg()
+                        LaubergeCoinBg()
                     }.padding([.horizontal, .top])
                 }.padding(.bottom, 40)
                 
                 Image(.settingsTextLauberge)
                     .resizable()
                     .scaledToFit()
-                    .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 136:68)
+                    .frame(height: LaubergeDeviceManager.shared.deviceType == .pad ? 136:68)
                 Spacer()
             }
         }.background(
@@ -93,5 +93,5 @@ struct ArgosySettingsView: View {
 }
 
 #Preview {
-    ArgosySettingsView(settingsVM: ArgosySettingsViewModel())
+    LaubergeSettingsView(settingsVM: ArgosySettingsViewModel())
 }

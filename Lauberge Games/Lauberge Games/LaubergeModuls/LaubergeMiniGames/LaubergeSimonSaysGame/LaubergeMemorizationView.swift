@@ -1,15 +1,7 @@
-//
-//  ArgosyMemorizationView.swift
-//  Lauberge Games
-//
-//  Created by Dias Atudinov on 20.05.2025.
-//
-
-
 import SwiftUI
 
-struct ArgosyMemorizationView: View {
-    @StateObject var user = ArgosyUser.shared
+struct LaubergeMemorizationView: View {
+    @StateObject var user = LaubergeUser.shared
     @Environment(\.presentationMode) var presentationMode
     
     let cardImages = ["cardFace1Lauberge", "cardFace2Lauberge", "cardFace3Lauberge", "cardFace4Lauberge", "cardFace5Lauberge", "cardFace6Lauberge"]
@@ -41,13 +33,13 @@ struct ArgosyMemorizationView: View {
                                     Image(.backIconLauberge)
                                         .resizable()
                                         .scaledToFit()
-                                        .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 100:50)
+                                        .frame(height: LaubergeDeviceManager.shared.deviceType == .pad ? 100:50)
                                 }
                                 
                             }
                             Spacer()
                             
-                            ArgosyCoinBg()
+                            LaubergeCoinBg()
                         }.padding([.horizontal, .top])
                     }
                 }
@@ -55,7 +47,7 @@ struct ArgosyMemorizationView: View {
                 Image(.simonSaysGameTextLauberge)
                     .resizable()
                     .scaledToFit()
-                    .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 136:68)
+                    .frame(height: LaubergeDeviceManager.shared.deviceType == .pad ? 136:68)
                 
                 Spacer()
                 
@@ -63,7 +55,7 @@ struct ArgosyMemorizationView: View {
                     // Full-screen reveal of each card in sequence
                     if let idx = currentStep {
                         MemorizationCardView(imageName: cardImages[idx])
-                            .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 600:300)
+                            .frame(height: LaubergeDeviceManager.shared.deviceType == .pad ? 600:300)
                             .padding()
                             .transition(.opacity)
                     }
@@ -96,14 +88,14 @@ struct ArgosyMemorizationView: View {
                             Image(.winBgLauberge)
                                 .resizable()
                                 .scaledToFit()
-                                .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 400:223)
+                                .frame(height: LaubergeDeviceManager.shared.deviceType == .pad ? 400:223)
                             Button {
                                 presentationMode.wrappedValue.dismiss()
                             } label: {
                                 Image(.nextLvlBtnLauberge)
                                     .resizable()
                                     .scaledToFit()
-                                    .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 200:105)
+                                    .frame(height: LaubergeDeviceManager.shared.deviceType == .pad ? 200:105)
                             }
                             
                             Button {
@@ -112,7 +104,7 @@ struct ArgosyMemorizationView: View {
                                 Image(.restartBtnLauberge)
                                     .resizable()
                                     .scaledToFit()
-                                    .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 200:105)
+                                    .frame(height: LaubergeDeviceManager.shared.deviceType == .pad ? 200:105)
                             }
                             
                             Button {
@@ -121,10 +113,10 @@ struct ArgosyMemorizationView: View {
                                 Image(.backBtnLauberge)
                                     .resizable()
                                     .scaledToFit()
-                                    .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 200:105)
+                                    .frame(height: LaubergeDeviceManager.shared.deviceType == .pad ? 200:105)
                             }
                             
-                        }.padding(.bottom, ArgosyDeviceManager.shared.deviceType == .pad ? 100 : 50)
+                        }.padding(.bottom, LaubergeDeviceManager.shared.deviceType == .pad ? 100 : 50)
                     }
                 } else {
                     ZStack {
@@ -135,7 +127,7 @@ struct ArgosyMemorizationView: View {
                             Image(.loseBgLauberge)
                                 .resizable()
                                 .scaledToFit()
-                                .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 400:223)
+                                .frame(height: LaubergeDeviceManager.shared.deviceType == .pad ? 400:223)
                             
                             Button {
                                 startGame()
@@ -143,7 +135,7 @@ struct ArgosyMemorizationView: View {
                                 Image(.restartBtnLauberge)
                                     .resizable()
                                     .scaledToFit()
-                                    .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 200:105)
+                                    .frame(height: LaubergeDeviceManager.shared.deviceType == .pad ? 200:105)
                             }
                             
                             Button {
@@ -152,10 +144,10 @@ struct ArgosyMemorizationView: View {
                                 Image(.backBtnLauberge)
                                     .resizable()
                                     .scaledToFit()
-                                    .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 200:105)
+                                    .frame(height: LaubergeDeviceManager.shared.deviceType == .pad ? 200:105)
                             }
                             
-                        }.padding(.bottom, ArgosyDeviceManager.shared.deviceType == .pad ? 100 : 50)
+                        }.padding(.bottom, LaubergeDeviceManager.shared.deviceType == .pad ? 100 : 50)
                     }
                 }
                 
@@ -238,5 +230,5 @@ struct MemorizationCardView: View {
 }
 
 #Preview {
-    ArgosyMemorizationView()
+    LaubergeMemorizationView()
 }

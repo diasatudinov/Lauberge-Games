@@ -1,7 +1,7 @@
 import UIKit
 
-class ArgosyDeviceManager {
-    static let shared = ArgosyDeviceManager()
+class LaubergeDeviceManager {
+    static let shared = LaubergeDeviceManager()
     
     var deviceType: UIUserInterfaceIdiom
     

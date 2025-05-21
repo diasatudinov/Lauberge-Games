@@ -1,6 +1,6 @@
 import SwiftUI
 
-enum ArgosyStoreSection: Codable, Hashable {
+enum LaubergeStoreSection: Codable, Hashable {
     case backgrounds
     case skin
 }
@@ -112,6 +112,6 @@ struct Item: Codable, Hashable {
     var name: String
     var image: String
     var icon: String
-    var section: ArgosyStoreSection
+    var section: LaubergeStoreSection
     var price: Int
 }

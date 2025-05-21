@@ -1,8 +1,8 @@
 import SwiftUI
 
-class ArgosyUser: ObservableObject {
+class LaubergeUser: ObservableObject {
     
-    static let shared = ArgosyUser()
+    static let shared = LaubergeUser()
     
     @AppStorage("achievement") var achievementNum: Int = 0
     @AppStorage("money") var storedMoney: Int = 100

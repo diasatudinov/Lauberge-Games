@@ -1,18 +1,10 @@
-//
-//  ArgosyMazeViewContainer.swift
-//  Lauberge Games
-//
-//  Created by Dias Atudinov on 20.05.2025.
-//
-
-
 import SwiftUI
 import SpriteKit
 
 
-struct ArgosyMazeViewContainer: UIViewRepresentable {
-    @StateObject var user = ArgosyUser.shared
-    var scene: ArgosyMazeScene
+struct LaubergeMazeViewContainer: UIViewRepresentable {
+    @StateObject var user = LaubergeUser.shared
+    var scene: LaubergeMazeScene
     @Binding var isWin: Bool
     func makeUIView(context: Context) -> SKView {
         let skView = SKView(frame: UIScreen.main.bounds)

@@ -2,9 +2,9 @@ import SwiftUI
 import SpriteKit
 
 
-struct ArgosySpriteViewContainer: UIViewRepresentable {
-    @StateObject var user = ArgosyUser.shared
-    var scene: ArgosyGameScene
+struct LaubergeSpriteViewContainer: UIViewRepresentable {
+    @StateObject var user = LaubergeUser.shared
+    var scene: LaubergeGameScene
     @Binding var isWin: Bool
     @Binding var score: Int
     var level: Int

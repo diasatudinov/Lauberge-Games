@@ -1,9 +1,9 @@
 import SwiftUI
 
 
-struct ArgosyShopView: View {
+struct LaubergeShopView: View {
     @Environment(\.presentationMode) var presentationMode
-    @StateObject var user = ArgosyUser.shared
+    @StateObject var user = LaubergeUser.shared
     @State var section: ArgosyStoreSection = .skin
     @ObservedObject var viewModel: ArgosyShopViewModel
     @State var skinIndex: Int = 0
@@ -22,12 +22,12 @@ struct ArgosyShopView: View {
                                 Image(.backIconLauberge)
                                     .resizable()
                                     .scaledToFit()
-                                    .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 100:50)
+                                    .frame(height: LaubergeDeviceManager.shared.deviceType == .pad ? 100:50)
                             }
                             
                             Spacer()
                             
-                            ArgosyCoinBg()
+                            LaubergeCoinBg()
                             
                         }.padding([.horizontal])
                     }
@@ -49,7 +49,7 @@ struct ArgosyShopView: View {
                             Image(.arrowShopLauberge)
                                 .resizable()
                                 .scaledToFit()
-                                .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 100:50)
+                                .frame(height: LaubergeDeviceManager.shared.deviceType == .pad ? 100:50)
                                 .scaleEffect(x: -1,y: 1)
                         }
                         Spacer()
@@ -66,11 +66,11 @@ struct ArgosyShopView: View {
                             Image(.arrowShopLauberge)
                                 .resizable()
                                 .scaledToFit()
-                                .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 100:50)
+                                .frame(height: LaubergeDeviceManager.shared.deviceType == .pad ? 100:50)
                             
                         }
                     }.offset(y: 40)
-                }.frame(width: ArgosyDeviceManager.shared.deviceType == .pad ? 500:250, height: ArgosyDeviceManager.shared.deviceType == .pad ? 450:250)
+                }.frame(width: LaubergeDeviceManager.shared.deviceType == .pad ? 500:250, height: LaubergeDeviceManager.shared.deviceType == .pad ? 450:250)
                 
                 ZStack {
                     Image(.backBgLauberge)
@@ -86,7 +86,7 @@ struct ArgosyShopView: View {
                             Image(.arrowShopLauberge)
                                 .resizable()
                                 .scaledToFit()
-                                .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 100:50)
+                                .frame(height: LaubergeDeviceManager.shared.deviceType == .pad ? 100:50)
                                 .scaleEffect(x: -1,y: 1)
                         }
                         
@@ -104,11 +104,11 @@ struct ArgosyShopView: View {
                             Image(.arrowShopLauberge)
                                 .resizable()
                                 .scaledToFit()
-                                .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 100:50)
+                                .frame(height: LaubergeDeviceManager.shared.deviceType == .pad ? 100:50)
                         }
-                    }.offset(y: ArgosyDeviceManager.shared.deviceType == .pad ? 50:40)
+                    }.offset(y: LaubergeDeviceManager.shared.deviceType == .pad ? 50:40)
                     
-                }.frame(width: ArgosyDeviceManager.shared.deviceType == .pad ? 500:250, height: ArgosyDeviceManager.shared.deviceType == .pad ? 450:250)
+                }.frame(width: LaubergeDeviceManager.shared.deviceType == .pad ? 500:250, height: LaubergeDeviceManager.shared.deviceType == .pad ? 450:250)
                 
                 Spacer()
             }
@@ -129,7 +129,7 @@ struct ArgosyShopView: View {
             Image(item.icon)
                 .resizable()
                 .scaledToFit()
-                .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 250:120)
+                .frame(height: LaubergeDeviceManager.shared.deviceType == .pad ? 250:120)
             
             if item.section == .skin {
                 if viewModel.boughtItems.contains(where: { $0.name == item.name }) {
@@ -141,7 +141,7 @@ struct ArgosyShopView: View {
                                 Image(.arrowShopLauberge)
                                     .resizable()
                                     .scaledToFit()
-                                    .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 100:50)
+                                    .frame(height: LaubergeDeviceManager.shared.deviceType == .pad ? 100:50)
                                     .rotationEffect(.degrees(90))
                             }
                             
@@ -153,7 +153,7 @@ struct ArgosyShopView: View {
                             Image(.priceLauberge)
                                 .resizable()
                                 .scaledToFit()
-                                .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 100:50)
+                                .frame(height: LaubergeDeviceManager.shared.deviceType == .pad ? 100:50)
                             
                             
                         }
@@ -169,7 +169,7 @@ struct ArgosyShopView: View {
                                 Image(.arrowShopLauberge)
                                     .resizable()
                                     .scaledToFit()
-                                    .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 100:50)
+                                    .frame(height: LaubergeDeviceManager.shared.deviceType == .pad ? 100:50)
                                     .rotationEffect(.degrees(90))
                             }
                             
@@ -181,7 +181,7 @@ struct ArgosyShopView: View {
                             Image(.priceLauberge)
                                 .resizable()
                                 .scaledToFit()
-                                .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 100:50)
+                                .frame(height: LaubergeDeviceManager.shared.deviceType == .pad ? 100:50)
                             
                             
                         }
@@ -189,7 +189,7 @@ struct ArgosyShopView: View {
                 }
             }
             
-        }.frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 314:150)
+        }.frame(height: LaubergeDeviceManager.shared.deviceType == .pad ? 314:150)
             .onTapGesture {
                 if item.section == .skin {
                     if viewModel.boughtItems.contains(where: { $0.name == item.name }) {
@@ -225,5 +225,5 @@ struct ArgosyShopView: View {
 
 
 #Preview {
-    ArgosyShopView(viewModel: ArgosyShopViewModel())
+    LaubergeShopView(viewModel: ArgosyShopViewModel())
 }

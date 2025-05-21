@@ -1,6 +1,6 @@
 import SwiftUI
 
-class ArgosyAchievementsViewModel: ObservableObject {
+class LaubergeAchievementsViewModel: ObservableObject {
     
     @Published var achievements: [AchievementSG] = [
         AchievementSG(image: "achi1IconLauberge", achievedCount: 0, achievedMaxCount: 1, isAchieved: false),
