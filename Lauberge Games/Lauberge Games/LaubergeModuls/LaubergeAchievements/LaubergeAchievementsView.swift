@@ -2,7 +2,7 @@ import SwiftUI
 
 struct LaubergeAchievementsView: View {
     @Environment(\.presentationMode) var presentationMode
-    @ObservedObject var viewModel: ArgosyAchievementsViewModel
+    @ObservedObject var viewModel: LaubergeAchievementsViewModel
     var body: some View {
         ZStack {
             
@@ -122,5 +122,5 @@ struct LaubergeAchievementsView: View {
 }
 
 #Preview {
-    LaubergeAchievementsView(viewModel: ArgosyAchievementsViewModel())
+    LaubergeAchievementsView(viewModel: LaubergeAchievementsViewModel())
 }

@@ -4,12 +4,12 @@ import SpriteKit
 struct LaubergeGameView: View {
     @Environment(\.presentationMode) var presentationMode
    
-    @State var gameScene: ArgosyGameScene = {
-        let scene = ArgosyGameScene(size: UIScreen.main.bounds.size)
+    @State var gameScene: LaubergeGameScene = {
+        let scene = LaubergeGameScene(size: UIScreen.main.bounds.size)
         scene.scaleMode = .resizeFill
         return scene
     }()
-    @ObservedObject var shopVM: ArgosyShopViewModel
+    @ObservedObject var shopVM: LaubergeShopViewModel
     @State private var powerUse = false
     @State private var isWin = false
     @State private var score = 0
@@ -19,7 +19,7 @@ struct LaubergeGameView: View {
     
     var body: some View {
         ZStack {
-            ArgosySpriteViewContainer(scene: gameScene, isWin: $isWin, score: $score, level: level)
+            LaubergeSpriteViewContainer(scene: gameScene, isWin: $isWin, score: $score, level: level)
                 .ignoresSafeArea()
             
             VStack(spacing: LaubergeDeviceManager.shared.deviceType == .pad ? 200:100) {
@@ -156,5 +156,5 @@ struct LaubergeGameView: View {
 }
 
 #Preview {
-    LaubergeGameView(shopVM: ArgosyShopViewModel(), level: 0)
+    LaubergeGameView(shopVM: LaubergeShopViewModel(), level: 0)
 }

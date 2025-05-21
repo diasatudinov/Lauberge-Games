@@ -2,7 +2,7 @@ import SwiftUI
 
 struct LaubergeChooseLevelView: View {
     @Environment(\.presentationMode) var presentationMode
-    @ObservedObject var shopVM: ArgosyShopViewModel
+    @ObservedObject var shopVM: LaubergeShopViewModel
     
     @State var openGame = false
     @State var selectedIndex = 0
@@ -66,7 +66,7 @@ struct LaubergeChooseLevelView: View {
             }
         )
         .fullScreenCover(isPresented: $openGame) {
-             ArgosyGameView(shopVM: shopVM, level: selectedIndex)
+             LaubergeGameView(shopVM: shopVM, level: selectedIndex)
         }
     }
     
@@ -74,5 +74,5 @@ struct LaubergeChooseLevelView: View {
 
 
 #Preview {
-    LaubergeChooseLevelView(shopVM: ArgosyShopViewModel())
+    LaubergeChooseLevelView(shopVM: LaubergeShopViewModel())
 }
