@@ -5,8 +5,8 @@ struct LaubergeCoupleGameView: View {
 
     @StateObject var user = LaubergeUser.shared
     
-    @State private var cards: [ArgosyCard] = []
-    @State private var selectedCards: [ArgosyCard] = []
+    @State private var cards: [LaubergeCard] = []
+    @State private var selectedCards: [LaubergeCard] = []
     @State private var message: String = "Find all matching cards!"
     @State private var gameEnded: Bool = false
     @State private var isWin: Bool = false
@@ -66,7 +66,7 @@ struct LaubergeCoupleGameView: View {
                         
                         LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 3), spacing: 10) {
                             ForEach(cards) { card in
-                                ArgosyCardView(card: card)
+                                LaubergeCardView(card: card)
                                     .onTapGesture {
                                         flipCard(card)
                                         
@@ -202,12 +202,12 @@ struct LaubergeCoupleGameView: View {
         // Restart timer
         timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
         // Generate cards
-        var gameCards = [ArgosyCard]()
+        var gameCards = [LaubergeCard]()
         
         // Add 4 cards of each type (24 cards total for 6 types)
         for type in cardTypes {
-            gameCards.append(ArgosyCard(type: type))
-            gameCards.append(ArgosyCard(type: type))
+            gameCards.append(LaubergeCard(type: type))
+            gameCards.append(LaubergeCard(type: type))
         }
                 
         // Shuffle cards
@@ -217,7 +217,7 @@ struct LaubergeCoupleGameView: View {
         cards = Array(gameCards.prefix(gridSize * gridSize))
     }
     
-    private func flipCard(_ card: ArgosyCard) {
+    private func flipCard(_ card: LaubergeCard) {
         guard let index = cards.firstIndex(where: { $0.id == card.id }),
               !cards[index].isFaceUp,
               !cards[index].isMatched,
@@ -287,8 +287,8 @@ struct LaubergeCoupleGameView: View {
     LaubergeCoupleGameView()
 }
 
-struct ArgosyCardView: View {
-    let card: ArgosyCard
+struct LaubergeCardView: View {
+    let card: LaubergeCard
 
     var body: some View {
         ZStack {
@@ -308,7 +308,7 @@ struct ArgosyCardView: View {
 }
 
 
-struct ArgosyCard: Identifiable {
+struct LaubergeCard: Identifiable {
     let id = UUID()
     let type: String
     var isFaceUp = false

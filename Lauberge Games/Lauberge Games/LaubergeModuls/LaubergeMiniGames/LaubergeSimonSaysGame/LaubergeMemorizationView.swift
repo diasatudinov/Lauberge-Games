@@ -54,7 +54,7 @@ struct LaubergeMemorizationView: View {
                 if gamePhase == .showing {
                     // Full-screen reveal of each card in sequence
                     if let idx = currentStep {
-                        MemorizationCardView(imageName: cardImages[idx])
+                        LaubergeMemorizationCardView(imageName: cardImages[idx])
                             .frame(height: LaubergeDeviceManager.shared.deviceType == .pad ? 600:300)
                             .padding()
                             .transition(.opacity)
@@ -63,7 +63,7 @@ struct LaubergeMemorizationView: View {
                     // Grid for user interaction
                     LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 12), count: 3), spacing: 12) {
                         ForEach(0..<cardImages.count, id: \.self) { index in
-                            MemorizationCardView(imageName: cardImages[index])
+                            LaubergeMemorizationCardView(imageName: cardImages[index])
                                 .onTapGesture {
                                     handleTap(on: index)
                                 }
@@ -218,7 +218,7 @@ struct LaubergeMemorizationView: View {
     }
 }
 
-struct MemorizationCardView: View {
+struct LaubergeMemorizationCardView: View {
     let imageName: String
     var body: some View {
         Image(imageName)

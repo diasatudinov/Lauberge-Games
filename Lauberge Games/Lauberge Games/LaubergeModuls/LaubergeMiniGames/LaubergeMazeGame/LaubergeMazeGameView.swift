@@ -4,8 +4,8 @@ import SpriteKit
 struct LaubergeMazeGameView: View {
     @Environment(\.presentationMode) var presentationMode
     @State var isWin = false
-    @State private var gameScene: ArgosyMazeScene = {
-        let scene = ArgosyMazeScene(size: UIScreen.main.bounds.size)
+    @State private var gameScene: LaubergeMazeScene = {
+        let scene = LaubergeMazeScene(size: UIScreen.main.bounds.size)
         scene.scaleMode = .resizeFill
         return scene
     }()
@@ -24,7 +24,7 @@ struct LaubergeMazeGameView: View {
                     .resizable()
                     .scaledToFit()
             }
-            ArgosyMazeViewContainer(scene: gameScene, isWin: $isWin)
+            LaubergeMazeViewContainer(scene: gameScene, isWin: $isWin)
                 
             
             VStack {
