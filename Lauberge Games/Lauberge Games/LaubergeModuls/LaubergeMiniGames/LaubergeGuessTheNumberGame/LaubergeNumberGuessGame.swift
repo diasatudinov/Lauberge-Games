@@ -31,10 +31,10 @@ struct LaubergeNumberGuessGame: View {
                         LaubergeCoinBg()
                     }.padding([.horizontal, .top])
 
-                    Image(.guessTheNumTextLauberge)
+                    Image(.guessTheNumTextLauberge1)
                         .resizable()
                         .scaledToFit()
-                        .frame(height: LaubergeDeviceManager.shared.deviceType == .pad ? 210:105)
+                        .frame(height: LaubergeDeviceManager.shared.deviceType == .pad ? 136:68)
                     
                     ZStack {
                         
@@ -53,7 +53,7 @@ struct LaubergeNumberGuessGame: View {
                                         Text( idx < guessDigits.count ? guessDigits[idx] : "" )
                                             .font(.system(size: 36, weight: .bold))
                                             .foregroundColor(.white)
-                                    }.frame(width: LaubergeDeviceManager.shared.deviceType == .pad ? 150:103, height: LaubergeDeviceManager.shared.deviceType == .pad ? 150:103)
+                                    }.frame(width: LaubergeDeviceManager.shared.deviceType == .pad ? 130:103, height: LaubergeDeviceManager.shared.deviceType == .pad ? 130:103)
                                 }
                             }
                             .padding(.vertical)

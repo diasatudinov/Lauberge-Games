@@ -7,9 +7,9 @@ struct LaubergeMainMenuView: View {
     @State private var showMiniGames = false
     @State private var showSettings = false
     
-    @StateObject var achievementVM = ArgosyAchievementsViewModel()
-    @StateObject var settingsVM = ArgosySettingsViewModel()
-    @StateObject var shopVM = ArgosyShopViewModel()
+    @StateObject var achievementVM = LaubergeAchievementsViewModel()
+    @StateObject var settingsVM = LaubergeSettingsViewModel()
+    @StateObject var shopVM = LaubergeShopViewModel()
     
     var body: some View {
         
@@ -21,7 +21,7 @@ struct LaubergeMainMenuView: View {
                     
                     Spacer()
                     
-                    ArgosyCoinBg()
+                    LaubergeCoinBg()
                     
                     
                 }
@@ -34,7 +34,7 @@ struct LaubergeMainMenuView: View {
                     Image(.playIconLauberge)
                         .resizable()
                         .scaledToFit()
-                        .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 188:94)
+                        .frame(height: LaubergeDeviceManager.shared.deviceType == .pad ? 188:94)
                 }
                 
                 Button {
@@ -43,7 +43,7 @@ struct LaubergeMainMenuView: View {
                     Image(.shopIconLauberge)
                         .resizable()
                         .scaledToFit()
-                        .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 188:94)
+                        .frame(height: LaubergeDeviceManager.shared.deviceType == .pad ? 188:94)
                 }
                 
                 Button {
@@ -52,18 +52,9 @@ struct LaubergeMainMenuView: View {
                     Image(.achievementIconLauberge)
                         .resizable()
                         .scaledToFit()
-                        .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 188:94)
+                        .frame(height: LaubergeDeviceManager.shared.deviceType == .pad ? 188:94)
                 }
                 HStack {
-                    Button {
-                        showSettings = true
-                    } label: {
-                        Image(.settingsIconLauberge)
-                            .resizable()
-                            .scaledToFit()
-                            .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 134:67)
-                    }
-                    
                     
                     Button {
                         showMiniGames = true
@@ -71,8 +62,18 @@ struct LaubergeMainMenuView: View {
                         Image(.miniGameIconLauberge)
                             .resizable()
                             .scaledToFit()
-                            .frame(height: ArgosyDeviceManager.shared.deviceType == .pad ? 134:67)
+                            .frame(height: LaubergeDeviceManager.shared.deviceType == .pad ? 134:67)
                     }
+                    
+                    Button {
+                        showSettings = true
+                    } label: {
+                        Image(.settingsIconLauberge)
+                            .resizable()
+                            .scaledToFit()
+                            .frame(height: LaubergeDeviceManager.shared.deviceType == .pad ? 134:67)
+                    }
+                    
                 }
                 Spacer()
                 
@@ -88,19 +89,19 @@ struct LaubergeMainMenuView: View {
             }
         )
         .fullScreenCover(isPresented: $showGame) {
-            ArgosyChooseLevelView(shopVM: shopVM)
+            LaubergeChooseLevelView(shopVM: shopVM)
         }
         .fullScreenCover(isPresented: $showMiniGames) {
-            ArgosyChooseMiniGame()
+            LaubergeChooseMiniGame()
         }
         .fullScreenCover(isPresented: $showAchievement) {
-            ArgosyAchievementsView(viewModel: achievementVM)
+            LaubergeAchievementsView(viewModel: achievementVM)
         }
         .fullScreenCover(isPresented: $showShop) {
-            ArgosyShopView(viewModel: shopVM)
+            LaubergeShopView(viewModel: shopVM)
         }
         .fullScreenCover(isPresented: $showSettings) {
-            ArgosySettingsView(settingsVM: settingsVM)
+            LaubergeSettingsView(settingsVM: settingsVM)
         }
         
     }

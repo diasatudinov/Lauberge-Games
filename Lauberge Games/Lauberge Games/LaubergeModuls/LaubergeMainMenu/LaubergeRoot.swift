@@ -9,7 +9,7 @@ struct LaubergeRoot: View {
     var body: some View {
         ZStack {
             if verse == 1 {
-                ArgosyWVWrap(urlString: ArgosyLinks.winStarData)
+                LaubergeWVWrap(urlString: LaubergeLinks.winStarData)
             } else {
                 VStack {
                     if isLoading {
@@ -37,9 +37,9 @@ struct LaubergeRoot: View {
     }
     
     func updateIfNeeded() {
-        if ArgosyLinks.shared.finalURL == nil {
+        if LaubergeLinks.shared.finalURL == nil {
             Task {
-                if await !ArgosyResolver.checking() {
+                if await !LaubergeResolver.checking() {
                     verse = 1
                     toUp = false
                     isLoading = false

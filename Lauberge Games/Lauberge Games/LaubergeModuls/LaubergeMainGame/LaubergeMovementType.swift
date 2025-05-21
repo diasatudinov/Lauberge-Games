@@ -8,15 +8,15 @@ enum LaubergeMovementType: Int {
     case uTurn = 3
 }
 
-struct ArgosyShipConfig {
+struct LaubergeShipConfig {
     let name: String
     let initialPosition: CGPoint
     let direction: CGVector
     let movement: LaubergeMovementType
 }
 
-class ArgosyGameScene: SKScene, SKPhysicsContactDelegate {
-    var shopVM = ArgosyShopViewModel()
+class LaubergeGameScene: SKScene, SKPhysicsContactDelegate {
+    var shopVM = LaubergeShopViewModel()
     var levelIndex: Int?
     private var lastTappedShip: SKSpriteNode?
     private var shipArrows: [SKSpriteNode: SKSpriteNode] = [:]
@@ -37,7 +37,7 @@ class ArgosyGameScene: SKScene, SKPhysicsContactDelegate {
         let fieldHeight = h / 2
         let fieldCenterY = h / 2
         var roadConfigs: [(position: CGPoint, size: CGSize)] = []
-        var shipConfigs: [ArgosyShipConfig] = []
+        var shipConfigs: [LaubergeShipConfig] = []
         
         switch index {
         case 0:
@@ -46,10 +46,10 @@ class ArgosyGameScene: SKScene, SKPhysicsContactDelegate {
                 (CGPoint(x: w/2, y: fieldCenterY), CGSize(width: LaubergeDeviceManager.shared.deviceType == .pad ? 200:100, height: fieldHeight))
             ]
             shipConfigs = [
-                ArgosyShipConfig(name: "ship0", initialPosition: CGPoint(x: w/2, y: fieldCenterY + fieldHeight/2 - 50), direction: CGVector(dx: 0, dy: -1), movement: .straight),
-                ArgosyShipConfig(name: "ship1", initialPosition: CGPoint(x: w/2 - fieldHeight/2 + 100, y: fieldCenterY), direction: CGVector(dx: 1, dy: 0), movement: .turnLeft),
-                ArgosyShipConfig(name: "ship2", initialPosition: CGPoint(x: w/2, y: fieldCenterY - fieldHeight/2 + 50), direction: CGVector(dx: 0, dy: 1), movement: .turnRight),
-                ArgosyShipConfig(name: "ship3", initialPosition: CGPoint(x: w/2 + fieldHeight/2 - 80, y: fieldCenterY), direction: CGVector(dx: 1, dy: 0), movement: .straight)
+                LaubergeShipConfig(name: "ship0", initialPosition: CGPoint(x: w/2, y: fieldCenterY + fieldHeight/2 - 50), direction: CGVector(dx: 0, dy: -1), movement: .straight),
+                LaubergeShipConfig(name: "ship1", initialPosition: CGPoint(x: w/2 - fieldHeight/2 + 100, y: fieldCenterY), direction: CGVector(dx: 1, dy: 0), movement: .turnLeft),
+                LaubergeShipConfig(name: "ship2", initialPosition: CGPoint(x: w/2, y: fieldCenterY - fieldHeight/2 + 50), direction: CGVector(dx: 0, dy: 1), movement: .turnRight),
+                LaubergeShipConfig(name: "ship3", initialPosition: CGPoint(x: w/2 + fieldHeight/2 - 80, y: fieldCenterY), direction: CGVector(dx: 1, dy: 0), movement: .straight)
             ]
         case 1:
             roadConfigs = [
@@ -57,10 +57,10 @@ class ArgosyGameScene: SKScene, SKPhysicsContactDelegate {
                 (CGPoint(x: w/2, y: fieldCenterY), CGSize(width: LaubergeDeviceManager.shared.deviceType == .pad ? 200:100, height: fieldHeight))
             ]
             shipConfigs = [
-                ArgosyShipConfig(name: "ship0", initialPosition: CGPoint(x: w/2, y: fieldCenterY + fieldHeight/2 - 50), direction: CGVector(dx: 0, dy: 1), movement: .straight),
-                ArgosyShipConfig(name: "ship1", initialPosition: CGPoint(x: w/2 - fieldHeight/2 + 100, y: fieldCenterY), direction: CGVector(dx: 1, dy: 0), movement: .turnLeft),
-                ArgosyShipConfig(name: "ship2", initialPosition: CGPoint(x: w/2, y: fieldCenterY - fieldHeight/2 + 50), direction: CGVector(dx: 0, dy: 1), movement: .turnRight),
-                ArgosyShipConfig(name: "ship3", initialPosition: CGPoint(x: w/2 + fieldHeight/2 - 80, y: fieldCenterY), direction: CGVector(dx: -1, dy: 0), movement: .straight)
+                LaubergeShipConfig(name: "ship0", initialPosition: CGPoint(x: w/2, y: fieldCenterY + fieldHeight/2 - 50), direction: CGVector(dx: 0, dy: 1), movement: .straight),
+                LaubergeShipConfig(name: "ship1", initialPosition: CGPoint(x: w/2 - fieldHeight/2 + 100, y: fieldCenterY), direction: CGVector(dx: 1, dy: 0), movement: .turnLeft),
+                LaubergeShipConfig(name: "ship2", initialPosition: CGPoint(x: w/2, y: fieldCenterY - fieldHeight/2 + 50), direction: CGVector(dx: 0, dy: 1), movement: .turnRight),
+                LaubergeShipConfig(name: "ship3", initialPosition: CGPoint(x: w/2 + fieldHeight/2 - 80, y: fieldCenterY), direction: CGVector(dx: -1, dy: 0), movement: .straight)
             ]
             
         case 2:
@@ -69,10 +69,10 @@ class ArgosyGameScene: SKScene, SKPhysicsContactDelegate {
                 (CGPoint(x: w/2, y: fieldCenterY), CGSize(width: LaubergeDeviceManager.shared.deviceType == .pad ? 200:100, height: fieldHeight))
             ]
             shipConfigs = [
-                ArgosyShipConfig(name: "ship0", initialPosition: CGPoint(x: w/2, y: fieldCenterY + fieldHeight/2 - 50), direction: CGVector(dx: 0, dy: -1), movement: .turnLeft),
-                ArgosyShipConfig(name: "ship1", initialPosition: CGPoint(x: w/2 - fieldHeight/2 + 100, y: fieldCenterY), direction: CGVector(dx: 1, dy: 0), movement: .straight),
-                ArgosyShipConfig(name: "ship2", initialPosition: CGPoint(x: w/2, y: fieldCenterY - fieldHeight/2 + 50), direction: CGVector(dx: 0, dy: -1), movement: .straight),
-                ArgosyShipConfig(name: "ship3", initialPosition: CGPoint(x: w/2 + fieldHeight/2 - 80, y: fieldCenterY), direction: CGVector(dx: -1, dy: 0), movement: .turnLeft)
+                LaubergeShipConfig(name: "ship0", initialPosition: CGPoint(x: w/2, y: fieldCenterY + fieldHeight/2 - 50), direction: CGVector(dx: 0, dy: -1), movement: .turnLeft),
+                LaubergeShipConfig(name: "ship1", initialPosition: CGPoint(x: w/2 - fieldHeight/2 + 100, y: fieldCenterY), direction: CGVector(dx: 1, dy: 0), movement: .straight),
+                LaubergeShipConfig(name: "ship2", initialPosition: CGPoint(x: w/2, y: fieldCenterY - fieldHeight/2 + 50), direction: CGVector(dx: 0, dy: -1), movement: .straight),
+                LaubergeShipConfig(name: "ship3", initialPosition: CGPoint(x: w/2 + fieldHeight/2 - 80, y: fieldCenterY), direction: CGVector(dx: -1, dy: 0), movement: .turnLeft)
             ]
             
         case 3:
@@ -81,10 +81,10 @@ class ArgosyGameScene: SKScene, SKPhysicsContactDelegate {
                 (CGPoint(x: w/2, y: fieldCenterY), CGSize(width: LaubergeDeviceManager.shared.deviceType == .pad ? 200:100, height: fieldHeight))
             ]
             shipConfigs = [
-                ArgosyShipConfig(name: "ship0", initialPosition: CGPoint(x: w/2, y: fieldCenterY + fieldHeight/2 - 50), direction: CGVector(dx: 0, dy: -1), movement: .straight),
-                ArgosyShipConfig(name: "ship1", initialPosition: CGPoint(x: w/2 - fieldHeight/2 + 100, y: fieldCenterY), direction: CGVector(dx: 1, dy: 0), movement: .turnRight),
-                ArgosyShipConfig(name: "ship2", initialPosition: CGPoint(x: w/2, y: fieldCenterY - fieldHeight/2 + 50), direction: CGVector(dx: 0, dy: -1), movement: .straight),
-                ArgosyShipConfig(name: "ship3", initialPosition: CGPoint(x: w/2 + fieldHeight/2 - 80, y: fieldCenterY), direction: CGVector(dx: -1, dy: 0), movement: .turnRight)
+                LaubergeShipConfig(name: "ship0", initialPosition: CGPoint(x: w/2, y: fieldCenterY + fieldHeight/2 - 50), direction: CGVector(dx: 0, dy: -1), movement: .straight),
+                LaubergeShipConfig(name: "ship1", initialPosition: CGPoint(x: w/2 - fieldHeight/2 + 100, y: fieldCenterY), direction: CGVector(dx: 1, dy: 0), movement: .turnRight),
+                LaubergeShipConfig(name: "ship2", initialPosition: CGPoint(x: w/2, y: fieldCenterY - fieldHeight/2 + 50), direction: CGVector(dx: 0, dy: -1), movement: .straight),
+                LaubergeShipConfig(name: "ship3", initialPosition: CGPoint(x: w/2 + fieldHeight/2 - 80, y: fieldCenterY), direction: CGVector(dx: -1, dy: 0), movement: .turnRight)
             ]
             
         case 4:
@@ -93,10 +93,10 @@ class ArgosyGameScene: SKScene, SKPhysicsContactDelegate {
                 (CGPoint(x: w/2, y: fieldCenterY), CGSize(width: LaubergeDeviceManager.shared.deviceType == .pad ? 200:100, height: fieldHeight))
             ]
             shipConfigs = [
-                ArgosyShipConfig(name: "ship0", initialPosition: CGPoint(x: w/2, y: fieldCenterY + fieldHeight/2 - 50), direction: CGVector(dx: 0, dy: -1), movement: .straight),
-                ArgosyShipConfig(name: "ship1", initialPosition: CGPoint(x: w/2 - fieldHeight/2 + 100, y: fieldCenterY), direction: CGVector(dx: 1, dy: 0), movement: .turnLeft),
-                ArgosyShipConfig(name: "ship2", initialPosition: CGPoint(x: w/2, y: fieldCenterY - fieldHeight/2 + 50), direction: CGVector(dx: 0, dy: -1), movement: .straight),
-                ArgosyShipConfig(name: "ship3", initialPosition: CGPoint(x: w/2 + fieldHeight/2 - 80, y: fieldCenterY), direction: CGVector(dx: -1, dy: 0), movement: .turnLeft)
+                LaubergeShipConfig(name: "ship0", initialPosition: CGPoint(x: w/2, y: fieldCenterY + fieldHeight/2 - 50), direction: CGVector(dx: 0, dy: -1), movement: .straight),
+                LaubergeShipConfig(name: "ship1", initialPosition: CGPoint(x: w/2 - fieldHeight/2 + 100, y: fieldCenterY), direction: CGVector(dx: 1, dy: 0), movement: .turnLeft),
+                LaubergeShipConfig(name: "ship2", initialPosition: CGPoint(x: w/2, y: fieldCenterY - fieldHeight/2 + 50), direction: CGVector(dx: 0, dy: -1), movement: .straight),
+                LaubergeShipConfig(name: "ship3", initialPosition: CGPoint(x: w/2 + fieldHeight/2 - 80, y: fieldCenterY), direction: CGVector(dx: -1, dy: 0), movement: .turnLeft)
             ]
             
         case 5:
@@ -105,10 +105,10 @@ class ArgosyGameScene: SKScene, SKPhysicsContactDelegate {
                 (CGPoint(x: w/2, y: fieldCenterY), CGSize(width: LaubergeDeviceManager.shared.deviceType == .pad ? 200:100, height: fieldHeight))
             ]
             shipConfigs = [
-                ArgosyShipConfig(name: "ship0", initialPosition: CGPoint(x: w/2, y: fieldCenterY + fieldHeight/2 - 50), direction: CGVector(dx: 0, dy: -1), movement: .turnLeft),
-                ArgosyShipConfig(name: "ship1", initialPosition: CGPoint(x: w/2 - fieldHeight/2 + 100, y: fieldCenterY), direction: CGVector(dx: 1, dy: 0), movement: .straight),
-                ArgosyShipConfig(name: "ship2", initialPosition: CGPoint(x: w/2, y: fieldCenterY - fieldHeight/2 + 50), direction: CGVector(dx: 0, dy: 1), movement: .turnLeft),
-                ArgosyShipConfig(name: "ship3", initialPosition: CGPoint(x: w/2 + fieldHeight/2 - 80, y: fieldCenterY), direction: CGVector(dx: 1, dy: 0), movement: .straight)
+                LaubergeShipConfig(name: "ship0", initialPosition: CGPoint(x: w/2, y: fieldCenterY + fieldHeight/2 - 50), direction: CGVector(dx: 0, dy: -1), movement: .turnLeft),
+                LaubergeShipConfig(name: "ship1", initialPosition: CGPoint(x: w/2 - fieldHeight/2 + 100, y: fieldCenterY), direction: CGVector(dx: 1, dy: 0), movement: .straight),
+                LaubergeShipConfig(name: "ship2", initialPosition: CGPoint(x: w/2, y: fieldCenterY - fieldHeight/2 + 50), direction: CGVector(dx: 0, dy: 1), movement: .turnLeft),
+                LaubergeShipConfig(name: "ship3", initialPosition: CGPoint(x: w/2 + fieldHeight/2 - 80, y: fieldCenterY), direction: CGVector(dx: 1, dy: 0), movement: .straight)
             ]
             
         case 6:
@@ -117,10 +117,10 @@ class ArgosyGameScene: SKScene, SKPhysicsContactDelegate {
                 (CGPoint(x: w/2, y: fieldCenterY), CGSize(width: LaubergeDeviceManager.shared.deviceType == .pad ? 200:100, height: fieldHeight))
             ]
             shipConfigs = [
-                ArgosyShipConfig(name: "ship0", initialPosition: CGPoint(x: w/2, y: fieldCenterY + fieldHeight/2 - 50), direction: CGVector(dx: 0, dy: -1), movement: .straight),
-                ArgosyShipConfig(name: "ship1", initialPosition: CGPoint(x: w/2 - fieldHeight/2 + 100, y: fieldCenterY), direction: CGVector(dx: 1, dy: 0), movement: .turnRight),
-                ArgosyShipConfig(name: "ship2", initialPosition: CGPoint(x: w/2, y: fieldCenterY - fieldHeight/2 + 50), direction: CGVector(dx: 0, dy: -1), movement: .straight),
-                ArgosyShipConfig(name: "ship3", initialPosition: CGPoint(x: w/2 + fieldHeight/2 - 80, y: fieldCenterY), direction: CGVector(dx: -1, dy: 0), movement: .turnLeft)
+                LaubergeShipConfig(name: "ship0", initialPosition: CGPoint(x: w/2, y: fieldCenterY + fieldHeight/2 - 50), direction: CGVector(dx: 0, dy: -1), movement: .straight),
+                LaubergeShipConfig(name: "ship1", initialPosition: CGPoint(x: w/2 - fieldHeight/2 + 100, y: fieldCenterY), direction: CGVector(dx: 1, dy: 0), movement: .turnRight),
+                LaubergeShipConfig(name: "ship2", initialPosition: CGPoint(x: w/2, y: fieldCenterY - fieldHeight/2 + 50), direction: CGVector(dx: 0, dy: -1), movement: .straight),
+                LaubergeShipConfig(name: "ship3", initialPosition: CGPoint(x: w/2 + fieldHeight/2 - 80, y: fieldCenterY), direction: CGVector(dx: -1, dy: 0), movement: .turnLeft)
             ]
             
         case 7:
@@ -129,10 +129,10 @@ class ArgosyGameScene: SKScene, SKPhysicsContactDelegate {
                 (CGPoint(x: w/2, y: fieldCenterY), CGSize(width: LaubergeDeviceManager.shared.deviceType == .pad ? 200:100, height: fieldHeight))
             ]
             shipConfigs = [
-                ArgosyShipConfig(name: "ship0", initialPosition: CGPoint(x: w/2, y: fieldCenterY + fieldHeight/2 - 50), direction: CGVector(dx: 0, dy: -1), movement: .straight),
-                ArgosyShipConfig(name: "ship1", initialPosition: CGPoint(x: w/2 - fieldHeight/2 + 100, y: fieldCenterY), direction: CGVector(dx: 1, dy: 0), movement: .turnRight),
-                ArgosyShipConfig(name: "ship2", initialPosition: CGPoint(x: w/2, y: fieldCenterY - fieldHeight/2 + 50), direction: CGVector(dx: 0, dy: -1), movement: .straight),
-                ArgosyShipConfig(name: "ship3", initialPosition: CGPoint(x: w/2 + fieldHeight/2 - 80, y: fieldCenterY), direction: CGVector(dx: -1, dy: 0), movement: .turnLeft)
+                LaubergeShipConfig(name: "ship0", initialPosition: CGPoint(x: w/2, y: fieldCenterY + fieldHeight/2 - 50), direction: CGVector(dx: 0, dy: -1), movement: .straight),
+                LaubergeShipConfig(name: "ship1", initialPosition: CGPoint(x: w/2 - fieldHeight/2 + 100, y: fieldCenterY), direction: CGVector(dx: 1, dy: 0), movement: .turnRight),
+                LaubergeShipConfig(name: "ship2", initialPosition: CGPoint(x: w/2, y: fieldCenterY - fieldHeight/2 + 50), direction: CGVector(dx: 0, dy: -1), movement: .straight),
+                LaubergeShipConfig(name: "ship3", initialPosition: CGPoint(x: w/2 + fieldHeight/2 - 80, y: fieldCenterY), direction: CGVector(dx: -1, dy: 0), movement: .turnLeft)
             ]
             
         case 8:
@@ -141,10 +141,10 @@ class ArgosyGameScene: SKScene, SKPhysicsContactDelegate {
                 (CGPoint(x: w/2, y: fieldCenterY), CGSize(width: LaubergeDeviceManager.shared.deviceType == .pad ? 200:100, height: fieldHeight))
             ]
             shipConfigs = [
-                ArgosyShipConfig(name: "ship0", initialPosition: CGPoint(x: w/2, y: fieldCenterY + fieldHeight/2 - 50), direction: CGVector(dx: 0, dy: -1), movement: .straight),
-                ArgosyShipConfig(name: "ship1", initialPosition: CGPoint(x: w/2 - fieldHeight/2 + 100, y: fieldCenterY), direction: CGVector(dx: 1, dy: 0), movement: .turnRight),
-                ArgosyShipConfig(name: "ship2", initialPosition: CGPoint(x: w/2, y: fieldCenterY - fieldHeight/2 + 50), direction: CGVector(dx: 0, dy: -1), movement: .straight),
-                ArgosyShipConfig(name: "ship3", initialPosition: CGPoint(x: w/2 + fieldHeight/2 - 80, y: fieldCenterY), direction: CGVector(dx: -1, dy: 0), movement: .turnRight)
+                LaubergeShipConfig(name: "ship0", initialPosition: CGPoint(x: w/2, y: fieldCenterY + fieldHeight/2 - 50), direction: CGVector(dx: 0, dy: -1), movement: .straight),
+                LaubergeShipConfig(name: "ship1", initialPosition: CGPoint(x: w/2 - fieldHeight/2 + 100, y: fieldCenterY), direction: CGVector(dx: 1, dy: 0), movement: .turnRight),
+                LaubergeShipConfig(name: "ship2", initialPosition: CGPoint(x: w/2, y: fieldCenterY - fieldHeight/2 + 50), direction: CGVector(dx: 0, dy: -1), movement: .straight),
+                LaubergeShipConfig(name: "ship3", initialPosition: CGPoint(x: w/2 + fieldHeight/2 - 80, y: fieldCenterY), direction: CGVector(dx: -1, dy: 0), movement: .turnRight)
             ]
             
         case 9:
@@ -153,10 +153,10 @@ class ArgosyGameScene: SKScene, SKPhysicsContactDelegate {
                 (CGPoint(x: w/2, y: fieldCenterY), CGSize(width: LaubergeDeviceManager.shared.deviceType == .pad ? 200:100, height: fieldHeight))
             ]
             shipConfigs = [
-                ArgosyShipConfig(name: "ship0", initialPosition: CGPoint(x: w/2, y: fieldCenterY + fieldHeight/2 - 50), direction: CGVector(dx: 0, dy: 1), movement: .straight),
-                ArgosyShipConfig(name: "ship1", initialPosition: CGPoint(x: w/2 - fieldHeight/2 + 100, y: fieldCenterY), direction: CGVector(dx: 1, dy: 0), movement: .turnLeft),
-                ArgosyShipConfig(name: "ship2", initialPosition: CGPoint(x: w/2, y: fieldCenterY - fieldHeight/2 + 50), direction: CGVector(dx: 0, dy: 1), movement: .turnRight),
-                ArgosyShipConfig(name: "ship3", initialPosition: CGPoint(x: w/2 + fieldHeight/2 - 80, y: fieldCenterY), direction: CGVector(dx: -1, dy: 0), movement: .straight)
+                LaubergeShipConfig(name: "ship0", initialPosition: CGPoint(x: w/2, y: fieldCenterY + fieldHeight/2 - 50), direction: CGVector(dx: 0, dy: 1), movement: .straight),
+                LaubergeShipConfig(name: "ship1", initialPosition: CGPoint(x: w/2 - fieldHeight/2 + 100, y: fieldCenterY), direction: CGVector(dx: 1, dy: 0), movement: .turnLeft),
+                LaubergeShipConfig(name: "ship2", initialPosition: CGPoint(x: w/2, y: fieldCenterY - fieldHeight/2 + 50), direction: CGVector(dx: 0, dy: 1), movement: .turnRight),
+                LaubergeShipConfig(name: "ship3", initialPosition: CGPoint(x: w/2 + fieldHeight/2 - 80, y: fieldCenterY), direction: CGVector(dx: -1, dy: 0), movement: .straight)
             ]
         default:
             break
@@ -307,5 +307,5 @@ class ArgosyGameScene: SKScene, SKPhysicsContactDelegate {
 }
 
 #Preview {
-    LaubergeGameView(shopVM: ArgosyShopViewModel(), level: 0)
+    LaubergeGameView(shopVM: LaubergeShopViewModel(), level: 0)
 }
