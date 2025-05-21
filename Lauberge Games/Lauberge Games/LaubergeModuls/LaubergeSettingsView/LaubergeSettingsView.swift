@@ -3,7 +3,7 @@ import SwiftUI
 struct LaubergeSettingsView: View {
     @Environment(\.presentationMode) var presentationMode
 
-    @ObservedObject var settingsVM: ArgosySettingsViewModel
+    @ObservedObject var settingsVM: LaubergeSettingsViewModel
     var body: some View {
         ZStack {
             
@@ -93,5 +93,5 @@ struct LaubergeSettingsView: View {
 }
 
 #Preview {
-    LaubergeSettingsView(settingsVM: ArgosySettingsViewModel())
+    LaubergeSettingsView(settingsVM: LaubergeSettingsViewModel())
 }

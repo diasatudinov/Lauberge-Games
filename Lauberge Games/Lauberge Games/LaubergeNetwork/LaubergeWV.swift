@@ -52,7 +52,7 @@ struct LaubergeWV: UIViewRepresentable {
     }
 }
 
-struct ArgosyWVWrap: View {
+struct LaubergeWVWrap: View {
     @State private var nAllow = true
     var urlString = ""
     @AppStorage("firstOpen") var firstOpen = true

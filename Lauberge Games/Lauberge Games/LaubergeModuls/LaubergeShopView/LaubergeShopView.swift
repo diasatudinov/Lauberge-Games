@@ -4,8 +4,8 @@ import SwiftUI
 struct LaubergeShopView: View {
     @Environment(\.presentationMode) var presentationMode
     @StateObject var user = LaubergeUser.shared
-    @State var section: ArgosyStoreSection = .skin
-    @ObservedObject var viewModel: ArgosyShopViewModel
+    @State var section: LaubergeStoreSection = .skin
+    @ObservedObject var viewModel: LaubergeShopViewModel
     @State var skinIndex: Int = 0
     @State var backIndex: Int = 0
     var body: some View {
@@ -122,7 +122,7 @@ struct LaubergeShopView: View {
         )
     }
     
-    @ViewBuilder func achievementItem(item: Item) -> some View {
+    @ViewBuilder func achievementItem(item: LaubergeItem) -> some View {
         
         
         VStack {
@@ -225,5 +225,5 @@ struct LaubergeShopView: View {
 
 
 #Preview {
-    LaubergeShopView(viewModel: ArgosyShopViewModel())
+    LaubergeShopView(viewModel: LaubergeShopViewModel())
 }
